@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voces Ciudadanas - Comuna 11</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="../css/Pregunta1/styles.css">
+</head>
+<body>
+
+    <header class="bg-white shadow-sm sticky-top">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center py-3">
+            <div class="logo-container mb-3 mb-md-0">
+                <a href="../index.html">
+                    <img src="../img/Logo.png" alt="Logo Voces Ciudadanas" class="img-fluid" style="max-height: 100px;">
+                </a>
+            </div>
+            <nav class="nav-menu">
+                <ul class="nav nav-pills border-0" id="main-nav">
+                    </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-banner text-white position-relative overflow-hidden">
+        <div class="container position-relative z-3 py-0">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 id="main-question-title" class="display-4 fw-bold">Pregunta Uno</h1>
+                    <p id="main-question-subtitle" class="lead my-4">Aquí irá el texto de la pregunta seleccionada de manera detallada.</p>
+                    <a href="#cards-container" class="btn btn-light-blue text-white btn-lg px-4 py-2 rounded-pill fw-bold">
+                        Responder <i class="fas fa-arrow-right ms-2"></i>
+                    </a>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-end">
+                    <img src="../img/hero-illustration.png" alt="Ilustración" class="hero-illustration img-fluid rounded shadow-sm">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <section class="summary-card-container p-4 mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="summary-badge-number me-3">1</div>
+                <h2 class="summary-section-title mb-0">Resumen general</h2>
+            </div>
+            
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-5 g-3" id="metrics-container">
+                </div>
+
+            <div class="mt-4 text-muted small d-flex align-items-center info-note">
+                <i class="fas fa-info-circle me-2 text-secondary"></i>
+                <span>Se analizaron 54 respuestas, de las cuales el 98,15 % contenían información válida. El análisis permitió identificar 6 temas principales y 27 subtemas, respaldados por un corpus de 559 palabras únicas..</span>
+            </div>
+        </section>
+
+        <!-- <section class="analysis-section-container p-4 mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="summary-badge-number bg-primary me-3"><i class="fas fa-chart-pie text-white"></i></div>
+                <h2 class="summary-section-title mb-0">Profundización del Análisis</h2>
+            </div>
+
+            <ul class="nav nav-pills custom-analysis-tabs mb-4 justify-content-center justify-content-md-start" id="analysis-tabs-nav" role="tablist">
+                </ul>
+
+            <div class="tab-content custom-tab-content" id="analysis-tabs-content">
+                </div>
+        </section> -->
+        <section class="analysis-section-container p-4 mb-5">
+            <div class="d-flex align-items-center mb-4">
+                <div class="summary-badge-number bg-primary me-3"><i class="fas fa-chart-pie text-white"></i></div>
+                <h2 class="summary-section-title mb-0">Profundización del Análisis</h2>
+            </div>
+
+            <!-- Contenedor unificado sin pestañas con todos los divs que requiere app.js -->
+            <div class="container-fluid py-4 bg-light rounded-3">
+                <div id="thematic-summary-analytical-section" class="mb-5"></div>
+                <div id="thematic-visualizations-section" class="mb-5"></div>
+                <div id="thematic-table-section" class="mb-5"></div>
+                <div id="thematic-wordcloud-section" class="mb-5"></div>
+                <div id="thematic-network-section" class="mb-4"></div>
+                <div id="thematic-map-section" class="mb-5"></div>
+                <div id="thematic-quotes-section" class="mb-5"></div>
+            </div>
+        </section>
+
+        <!-- <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4" id="cards-container">
+        </div> -->
+    </main>
+
+    <footer class="footer text-white pt-5 pb-3">
+        <div class="container text-center">
+            <p class="fw-semibold mb-4">Con el apoyo de:</p>
+            
+            <div class="row row-cols-2 row-cols-md-5 g-4 align-items-center justify-content-center mb-5 project-logos">
+                <div class="col"><div class="footer-logo-placeholder">ALCALDÍA DE MEDELLÍN</div></div>
+                <div class="col"><div class="footer-logo-placeholder">Comuna 11 <br><small>Laureles-Estadio</small></div></div>
+                <div class="col"><div class="footer-logo-placeholder">Personería de Medellín</div></div>
+                <div class="col"><div class="footer-logo-placeholder">Universidad de Antioquia</div></div>
+                <div class="col"><div class="footer-logo-placeholder">Fundación Bienestar Mayor</div></div>
+            </div>
+            
+            <hr class="border-light opacity-25">
+            
+            <p class="small mb-0 opacity-75">&copy; 2026 Voces Ciudadanas - Comuna 11. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/pregunta1/config.js"></script>
+    <script src="../js/pregunta1/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,554 @@
+/* Variables de Color basadas en el diseño */
+:root {
+    --blue-primary: #d7b6eb;
+    --blue-dark: rgb(195, 131, 235);
+    --blue-hero-start: #d7b6eb;
+    --blue-hero-end: #ca90ef;
+    --text-dark: rgb(176, 99, 223);
+    --bg-light: #f8faff;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+}
+
+/* Navbar */
+.nav-tabs .nav-link {
+    color: #6c757d;
+    border: none;
+    font-weight: 500;
+    padding: 1rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-tabs .nav-link:hover {
+    color: var(--blue-primary);
+    border: none;
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--blue-primary) !important;
+    border: none !important;
+    border-bottom: 3px solid var(--blue-primary) !important;
+    font-weight: 700;
+}
+
+/* Hero Banner */
+.hero-banner {
+    background: linear-gradient(135deg, var(--blue-hero-start) 0%, var(--blue-hero-end) 100%);
+    padding: 10px 0;
+}
+
+.btn-light-blue {
+    background-color: rgb(176, 99, 223);;
+    border: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-light-blue:hover {
+    background-color: #163e75;
+    transform: translateY(-2px);
+}
+
+.hero-illustration {
+    max-height: 280px;
+    object-fit: contain;
+    mix-blend-mode: multiply; /* Integra el fondo si el logo tiene fondo blanco */
+    opacity: 0.85;
+}
+
+/* Cards Estilo Mockup */
+.question-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 100%;
+}
+
+.question-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.08);
+    border-color: var(--blue-primary);
+}
+
+.card-number {
+    width: 32px;
+    height: 32px;
+    background-color: var(--blue-primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.card-arrow-btn {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #cbd5e1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue-primary);
+    transition: all 0.2s;
+}
+
+.question-card:hover .card-arrow-btn {
+    background-color: var(--blue-primary);
+    color: white;
+    border-color: var(--blue-primary);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--blue-dark);
+}
+
+.footer-logo-placeholder {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0 15px;
+    font-size: 0.85rem;
+    opacity: 0.9;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .footer-logo-placeholder {
+        border-left: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 15px;
+    }
+}
+
+/* Estilos específicos para el menú con iconos verticales */
+.custom-nav-item {
+    color: #4a5568 !important; /* Gris de los botones inactivos */
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem !important;
+    border: none !important;
+    border-bottom: 3px solid transparent !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.custom-nav-item .nav-icon {
+    font-size: 1.4rem; /* Tamaño del icono */
+    opacity: 0.8;
+}
+
+/* Estado al pasar el cursor (Hover) */
+.custom-nav-item:hover {
+    color: #0056b3 !important;
+}
+
+/* Estado Activo (Pregunta Seleccionada) */
+.custom-nav-item.active {
+    color: rgb(176, 99, 223) !important; /* Azul destacado */
+    background: none !important;
+    font-weight: 700;
+    border-bottom: 3px solid rgb(176, 99, 223) !important; /* Línea inferior idéntica a la imagen */
+}
+
+.custom-nav-item.active .nav-icon {
+    opacity: 1;
+}
+
+
+/* --- ESTILOS DEL RESUMEN GENERAL --- */
+.summary-card-container {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.summary-badge-number {
+    width: 34px;
+    height: 34px;
+    background-color: #6f42c1; /* Color púrpura del mockup */
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.summary-section-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1a202c;
+}
+
+/* Cajas de Métricas Individuales */
+.metric-box {
+    background-color: #ffffff;
+    border: 1px solid #edf2f7;
+    border-radius: 12px;
+    padding: 1.25rem 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.metric-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.metric-icon-wrapper {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.metric-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #0f172a; /* Azul oscuro casi negro */
+    line-height: 1.1;
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #4a5568;
+    line-height: 1.3;
+}
+
+/* Colores personalizados para los iconos según el mockup */
+.metric-purple { color: #8a3ffc; }
+.metric-green  { color: #0f9d58; }
+.metric-yellow { color: #f4b400; }
+.metric-blue   { color: #1a73e8; }
+.metric-pink   { color: #e52592; }
+
+/* Nota aclaratoria inferior */
+.info-note {
+    font-size: 0.85rem;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 15px;
+}
+
+/* --- ESTILOS DE LOS TABS DE ANÁLISIS --- */
+.analysis-section-container {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.custom-analysis-tabs {
+    background-color: #f8fafc;
+    padding: 6px;
+    border-radius: 12px;
+    display: inline-flex;
+    border: 1px solid #e2e8f0;
+}
+
+.custom-analysis-tabs .nav-link {
+    color: #64748b;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    padding: 10px 24px;
+    transition: all 0.25s ease;
+    border: none !important;
+}
+
+.custom-analysis-tabs .nav-link:hover {
+    color: #0056b3;
+}
+
+/* Pestaña activa: Toma el azul de la marca */
+.custom-analysis-tabs .nav-link.active {
+    background-color: #0056b3 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 10px rgba(0, 86, 179, 0.15);
+}
+
+/* Área de contenido del tab */
+.custom-tab-content {
+    background-color: #ffffff;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    min-height: 200px;
+}
+
+/* Icono en el badge del título */
+.summary-badge-number i {
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   ESTILOS COMPONENTES ANALÍTICOS TEMÁTICOS
+   ========================================== */
+
+/* Contenedor Común de Sección Analítica */
+.analysis-block-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+.analysis-block-number {
+    width: 32px;
+    height: 32px;
+    background-color: #6f42c1;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+}
+
+.analysis-block-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* 2. Mapa Temático Conector */
+.mindmap-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    gap: 2rem;
+}
+
+.mindmap-core {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 1.25rem;
+    border-radius: 12px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 160px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.mindmap-branches {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    flex-grow: 1;
+}
+
+.mindmap-branch-node {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.mindmap-theme-box {
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    font-weight: 600;
+    min-width: 200px;
+    font-size: 0.9rem;
+}
+
+.mindmap-subthemes-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.mindmap-subtheme-tag {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+@media (max-width: 992px) {
+    .mindmap-container {
+        flex-direction: column;
+    }
+    .mindmap-branches {
+        width: 100%;
+    }
+    .mindmap-branch-node {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+}
+
+/* 3. Tabla de Temas */
+.custom-theme-table th {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-weight: 700;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.table-theme-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+/* 4. Citas Representativas */
+.quote-bubble-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: transform 0.2s;
+}
+
+.quote-bubble-card:hover {
+    transform: translateY(-2px);
+}
+
+.quote-text {
+    font-size: 0.95rem;
+    font-style: italic;
+    color: #334155;
+    line-height: 1.5;
+}
+
+/* 5. Visualizaciones (Gráficos responsivos puros CSS) */
+.bar-chart-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.chart-label {
+    width: 220px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #475569;
+    padding-right: 15px;
+}
+
+.chart-bar-container {
+    flex-grow: 1;
+    height: 24px;
+    background-color: #f1f5f9;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+.chart-bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chart-value-label {
+    width: 40px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #0f172a;
+    text-align: right;
+    padding-left: 10px;
+}
+
+@media (max-width: 576px) {
+    .bar-chart-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .chart-label {
+        width: 100%;
+    }
+    .chart-bar-container {
+        width: 100%;
+    }
+}
+
+/* Nube de palabras */
+.wordcloud-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.wordcloud-item {
+    transition: transform 0.2s;
+    cursor: default;
+    display: inline-block;
+}
+
+.wordcloud-item:hover {
+    transform: scale(1.15);
+}
+
+/* --- NUEVA VISUALIZACIÓN GRÁFICA --- */
+.chart-info-box {
+    background-color: #f0f4f9;
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 0.85rem;
+    color: #1e293b;
+    max-width: 280px;
+}
+
+.chart-header-row {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e293b;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Color azul oficial de la gráfica de la imagen */
+.chart-bar-blue {
+    background-color: #0d55b0 !important;
+}
+
+/* Caja de interpretación inferior */
+.interpretation-box {
+    background-color: #f0f4f9;
+    border-radius: 12px;
+    padding: 1.25rem;
+    border: 1px solid #dee2e6;
+}
+
+.interpretation-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #0d55b0;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
