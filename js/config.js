@@ -3,8 +3,8 @@ const SITE_DATA = {
     navigation: [
         { id: "index", label: "General", icon: "fas fa-home", active: true, url:"index.html" },
         { id: "pregunta1", label: "Pregunta 1", icon: "fas fa-user-friends", active: false, url:"./html/pregunta1.html" },
-        { id: "pregunta2", label: "Pregunta 2", icon: "fas fa-heartbeat", active: false, url:"./html/pregunta1.html" },
-        { id: "pregunta3", label: "Pregunta 3", icon: "fas fa-users", active: false, url:"./html/pregunta1.html" },
+        { id: "pregunta2", label: "Pregunta 2", icon: "fas fa-heartbeat", active: false, url:"./html/pregunta2.html" },
+        { id: "pregunta3", label: "Pregunta 3", icon: "fas fa-users", active: false, url:"./html/pregunta3.html" },
         { id: "pregunta4", label: "Pregunta 4", icon: "fas fa-chart-bar", active: false, url:"./html/pregunta1.html" }
     ],
 
