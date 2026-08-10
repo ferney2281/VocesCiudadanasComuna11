@@ -1,10 +1,10 @@
 /* Variables de Color basadas en el diseño */
 :root {
-    --blue-primary: ;
-    --blue-dark: rgb(195, 131, 235);
-    --blue-hero-start: #ca90ef;
-    --blue-hero-end:#d7b6eb ;
-    --text-dark: rgb(176, 99, 223);
+    --blue-primary: #C2F2D8;
+    --blue-dark: #2E8C60;
+    --blue-hero-start: #6ABE96;
+    --blue-hero-end: #C2F2D8;
+    --text-dark: #2E8C60;
     --bg-light: #f8faff;
 }
 
@@ -42,13 +42,13 @@ body {
 }
 
 .btn-light-blue {
-    background-color: rgb(176, 99, 223);;
+    background-color: #2E8C60;
     border: none;
     transition: transform 0.2s, background-color 0.2s;
 }
 
 .btn-light-blue:hover {
-    background-color: #163e75;
+    background-color: #6ABE96;
     transform: translateY(-2px);
 }
 
@@ -152,10 +152,10 @@ body {
 
 /* Estado Activo (Pregunta Seleccionada) */
 .custom-nav-item.active {
-    color: rgb(176, 99, 223) !important; /* Azul destacado */
+    color: #6ABE96 !important; /* Azul destacado */
     background: none !important;
     font-weight: 700;
-    border-bottom: 3px solid rgb(176, 99, 223) !important; /* Línea inferior idéntica a la imagen */
+    border-bottom: 3px solid #6ABE96 !important; /* Línea inferior idéntica a la imagen */
 }
 
 .custom-nav-item.active .nav-icon {

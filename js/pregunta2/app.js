@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Renderizar el Menú Dinámico
 function renderNavbar() {
     const navContainer = document.getElementById("main-nav");
-    navContainer.innerHTML = SITE_DATA.navigation.map(item => `
+    navContainer.innerHTML = SITE_DATA1.navigation.map(item => `
         <li class="nav-item">
             <a class="nav-link custom-nav-item d-flex flex-column align-items-center ${item.active ? 'active' : ''}" href="${item.url}">   
                 <i class="${item.icon} mb-2 nav-icon"></i>
@@ -26,16 +26,16 @@ function renderNavbar() {
 
 // Renderizar Textos del Header
 function renderHero() {
-    document.getElementById("main-question-title").textContent = SITE_DATA.hero.title;
-    document.getElementById("main-question-subtitle").textContent = SITE_DATA.hero.subtitle;
+    document.getElementById("main-question-title").textContent = SITE_DATA1.hero.title;
+    document.getElementById("main-question-subtitle").textContent = SITE_DATA1.hero.subtitle;
 }
 
 // Renderizar Métricas de Resumen General
 function renderMetrics() {
     const metricsContainer = document.getElementById("metrics-container");
-    if (!metricsContainer || !SITE_DATA.summaryMetrics) return;
+    if (!metricsContainer || !SITE_DATA1.summaryMetrics) return;
 
-    metricsContainer.innerHTML = SITE_DATA.summaryMetrics.map(metric => {
+    metricsContainer.innerHTML = SITE_DATA1.summaryMetrics.map(metric => {
         const helpIconHTML = metric.helpText 
             ? `<i class="fas fa-question-circle text-muted ms-1" style="cursor: help; font-size: 0.8rem;" title="${metric.helpText}"></i>` 
             : "";
@@ -67,7 +67,7 @@ function renderCards() {
     const cardsContainer = document.getElementById("cards-container");
     if (!cardsContainer) return;
     
-    cardsContainer.innerHTML = SITE_DATA.cards.map(card => `
+    cardsContainer.innerHTML = SITE_DATA1.cards.map(card => `
         <div class="col-xl-3 col-lg-4 col-md-6 col-12">
             <div class="question-card p-4 d-flex flex-column h-100 justify-content-between">
                 <div>
@@ -96,10 +96,10 @@ function renderAnalysisTabs() {
     const tabsNavContainer = document.getElementById("analysis-tabs-nav");
     const tabsContentContainer = document.getElementById("analysis-tabs-content");
 
-    if (!tabsNavContainer || !tabsContentContainer || !SITE_DATA.analysisTabs) return;
+    if (!tabsNavContainer || !tabsContentContainer || !SITE_DATA1.analysisTabs) return;
 
     // Generar la botonera (pestañas)
-    tabsNavContainer.innerHTML = SITE_DATA.analysisTabs.map(tab => `
+    tabsNavContainer.innerHTML = SITE_DATA1.analysisTabs.map(tab => `
         <li class="nav-item" role="presentation">
             <button 
                 class="nav-link ${tab.active ? 'active' : ''}" 
@@ -116,7 +116,7 @@ function renderAnalysisTabs() {
     `).join('');
 
     // Generar los paneles de contenido
-    tabsContentContainer.innerHTML = SITE_DATA.analysisTabs.map(tab => `
+    tabsContentContainer.innerHTML = SITE_DATA1.analysisTabs.map(tab => `
         <div 
             class="tab-pane fade ${tab.active ? 'show active' : ''}" 
             id="tab-panel-${tab.id}" 
@@ -127,7 +127,7 @@ function renderAnalysisTabs() {
     `).join('');
 
     // Pintar los datos si "tematico" es la pestaña activa inicial
-    const activeTab = SITE_DATA.analysisTabs.find(tab => tab.active);
+    const activeTab = SITE_DATA1.analysisTabs.find(tab => tab.active);
     if (activeTab && activeTab.id === "tematico") {
         setTimeout(() => {
             renderFullThematicSuite();
@@ -149,7 +149,7 @@ function renderAnalysisTabs() {
 
 // Renderizador Maestro de todas las subsecciones del Análisis Temático
 function renderFullThematicSuite() {
-    const data = SITE_DATA.thematicAnalysis;
+    const data = SITE_DATA1.thematicAnalysis;
     if (!data) {
         console.error("No se encontraron los datos de 'thematicAnalysis' en config.js");
         return;

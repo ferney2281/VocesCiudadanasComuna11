@@ -1,29 +1,35 @@
-const SITE_DATA = {
+const SITE_DATA1 = {
     // Configuración del Menú de navegación superior con iconos asignados
+    // Textos del Banner Principal
+    hero: {
+        title: "Pregunta 2",
+        subtitle: "¿Cuáles son las causas de los problemas que afectan el bienestar y cuidado de los adultos mayores en la comuna 11 (Laureles-Estadio)?"
+    },
+  
     navigation: [
         { id: "index", label: "General", icon: "fas fa-home", active: false, url:"../../index.html" },
-        { id: "pregunta1", label: "Pregunta 1", icon: "fas fa-user-friends", active: true, url:"./html/pregunta1.html" },
-        { id: "pregunta2", label: "Pregunta 2", icon: "fas fa-heartbeat", active: false, url:"./html/pregunta1.html" },
-        { id: "pregunta3", label: "Pregunta 3", icon: "fas fa-users", active: false, url:"./html/pregunta1.html" },
-        { id: "pregunta4", label: "Pregunta 4", icon: "fas fa-chart-bar", active: false, url:"./html/pregunta1.html" }
+        { id: "pregunta1", label: "Pregunta 1", icon: "fas fa-user-friends", active: false, url:"pregunta1.html" },
+        { id: "pregunta2", label: "Pregunta 2", icon: "fas fa-heartbeat", active: true, url:"pregunta2.html" },
+        { id: "pregunta3", label: "Pregunta 3", icon: "fas fa-users", active: false, url:"pregunta3.html" },
+        { id: "pregunta4", label: "Pregunta 4", icon: "fas fa-chart-bar", active: false, url:"" }
     ],
-    // NUEVO: Métricas del Resumen General para la Pregunta 1
+    // NUEVO: Métricas del Resumen General para la Pregunta 2
     summaryMetrics: [
         {
             label: "Respuestas analizadas",
-            value: 54,
+            value: 35,
             icon: "fas fa-users-cog",
             colorClass: "metric-purple"
         },
         {
             label: "Respuestas válidas",
-            value: 53,
+            value: 35,
             icon: "fas fa-check-circle",
             colorClass: "metric-green"
         },
         {
             label: "Respuestas vacías",
-            value: 1,
+            value: 0,
             icon: "fas fa-adjust",
             colorClass: "metric-yellow"
         },
@@ -35,98 +41,70 @@ const SITE_DATA = {
         },
         {
             label: "Subtemas identificados",
-            value: 27,
+            value: 34,
             icon: "fas fa-sitemap",
             colorClass: "metric-pink"
         },
         {
             label: "Palabras únicas",
-            value: 559,
+            value: 462,
             icon: "fas fa-sitemap",
             colorClass: "metric-pink",
             helpText: "Número de términos distintos identificados después del proceso de limpieza y normalización del texto."
         }
     ],
 
-    // Textos del Banner Principal
-    hero: {
-        title: "Pregunta 1",
-        subtitle: "Según su opinión, ¿cuáles son los principales problemas que afectan el bienestar y cuidado de los adultos mayores en la comuna 11 (Laureles-Estadio)?"
-    },
-
-    // Las 21 tarjetas
-    cards: [
-        { id: 1, title: "Pregunta 1", desc: "Estoy de acuerdo en participar con mis respuestas", url_analisis: "analisis_1.html" },
-        { id: 2, title: "Pregunta 3", desc: "¿A través de cuál canal se enteró de éste proceso?", url_analisis: "analisis_3.html" },
-        { id: 3, title: "Pregunta 4", desc: "¿Vive usted en la comuna 11 de Medellín (Laureles-Estadio)?", url_analisis: "analisis_4.html" },
-        { id: 4, title: "Pregunta 5", desc: "¿En qué municipio vive usted?", url_analisis: "analisis_5.html" },
-        { id: 5, title: "Pregunta 6", desc: "¿En qué barrio vive usted?", url_analisis: "analisis_6.html" },
-        { id: 6, title: "Pregunta 7", desc: "¿Qué relación tiene usted con la comuna 11 (Laureles-Estadio)?", url_analisis: "analisis_7.html" },
-        { id: 7, title: "Pregunta 8", desc: "¿Nos podría compartir sus redes sociales? (si las tiene)", url_analisis: "analisis_8.html" },
-        { id: 8, title: "Pregunta 9", desc: "¿Cuál es su edad?", url_analisis: "analisis_9.html" },
-        { id: 9, title: "Pregunta 10", desc: "¿Cuál es su sexo?", url_analisis: "analisis_10.html" },
-        { id: 10, title: "Pregunta 11", desc: "¿Cuál es  su profesión u ocupación?", url_analisis: "analisis_11.html" },
-        { id: 11, title: "Pregunta 12", desc: "¿Le gustaría participar en un grupo de discusión para ampliar sus aportes?", url_analisis: "analisis_12.html" },
-        { id: 12, title: "Pregunta 13", desc: "¿Cuál es su nombre completo?", url_analisis: "analisis_13.html" },
-        { id: 13, title: "Pregunta 14", desc: "Teléfono/Celular", url_analisis: "analisis_14.html" },
-        { id: 14, title: "Pregunta 15", desc: "Correo electrónico", url_analisis: "analisis_15.html" },
-        { id: 15, title: "Pregunta 16", desc: "¿Pertenece a alguna Institución u organización en la Comuna 11?", url_analisis: "analisis_16.html" },
-        { id: 16, title: "Pregunta 17", desc: "Tipo de organización a la que pertenece", url_analisis: "analisis_17.html" },
-        { id: 17, title: "Pregunta 18", desc: "Página web de la organización", url_analisis: "analisis_18.html" },
-        { id: 18, title: "Pregunta 19", desc: "Redes sociales de la organización", url_analisis: "analisis_19.html" },
-        { id: 19, title: "Pregunta 20", desc: "Dirección de la organización", url_analisis: "analisis_20.html" },
-        { id: 20, title: "Pregunta 21", desc: "Observaciones ", url_analisis: "analisis_21.html" }
-    ],
+    
     // NUEVA ESTRUCTURA DE DATOS COMPLETA PARA EL ANÁLISIS TEMÁTICO
     thematicAnalysis: {
             summaryAnalyticalBlock: {
             title: "Resumen analítico",
-            subtitle: "Síntesis de los principales hallazgos del análisis temático y léxico de las 53 respuestas válidas.",
+            subtitle: "Síntesis de los principales hallazgos del análisis temático y léxico de las 35 respuestas válidas.",
             interpretationTitle: "Interpretación general",
-            interpretationText: "Los resultados muestran que las preocupaciones de los participantes se concentran principalmente en la movilidad e infraestructura urbana y en los servicios y apoyo al adulto mayor, seguidas por temas relacionados con seguridad. El vocabulario más frecuente y las coocurrencias identificadas evidencian la relación entre las condiciones del entorno físico y el bienestar de las personas mayores.",
-            footnote: "Los porcentajes se calculan sobre las 53 respuestas válidas. Una misma respuesta puede estar asociada a más de un tema.",
+            interpretationText: "Los resultados muestran que las causas de los problemas que afectan el bienestar y cuidado de los adultos mayores se concentran principalmente en la soledad, el aislamiento y la falta de redes de apoyo, seguidos por dificultades relacionadas con la salud, el cuidado y la preparación de los cuidadores. También adquieren relevancia las condiciones del espacio público, la movilidad, la seguridad y el control institucional. El vocabulario y las relaciones entre conceptos evidencian que el bienestar de las personas mayores no depende de un único factor, sino de la interacción entre redes familiares y sociales, condiciones económicas, acceso a servicios, entorno urbano y capacidad institucional de respuesta.",
+            footnote: "Los porcentajes se calculan sobre las 35 respuestas válidas. Una misma respuesta puede estar asociada a más de un tema.",
             cards: [
                 {
                     type: "theme",
                     badge: "Tema más frecuente",
-                    title: "Movilidad e infraestructura urbana",
-                    value: "22",
+                    title: "Soledad, aislamiento y redes de apoyo",
+                    value: "17",
                     unit: "respuestas",
-                    percentage: "41,5 %",
-                    subtext: "Frecuencia sobre 53 respuestas válidas",
+                    percentage: "48,6 %",
+                    subtext: "Frecuencia sobre 35 respuestas válidas",
                     icon: "fas fa-trophy",
                     bgClass: "bg-primary-subtle text-primary"
                 },
                 {
                     type: "theme",
                     badge: "Segundo tema más frecuente",
-                    title: "Servicios y apoyo al adulto mayor",
-                    value: "22",
+                    title: "Salud, cuidado y formación de cuidadores",
+                    value: "14",
                     unit: "respuestas",
-                    percentage: "41,5 %",
-                    subtext: "Frecuencia sobre 53 respuestas válidas",
+                    percentage: "40,0 %",
+                    subtext: "Frecuencia sobre 35 respuestas válidas",
                     icon: "fas fa-users",
                     bgClass: "bg-success-subtle text-success"
                 },
                 {
                     type: "theme",
                     badge: "Tercer tema más frecuente",
-                    title: "Seguridad e inseguridad",
-                    value: "20",
+                    title: "Empate entre:<br><br> 'Espacio público, movilidad y condiciones del entorno' <br><br>'Seguridad, control institucional y convivencia'",
+                    value: "10",
                     unit: "respuestas",
-                    percentage: "37,7 %",
-                    subtext: "Frecuencia sobre 53 respuestas válidas",
+                    percentage: "28,6 %",
+                    subtext: "Frecuencia sobre 35 respuestas válidas",
                     icon: "fas fa-shield-alt",
                     bgClass: "bg-info-subtle text-info"
                 },
                 {
                     type: "lexical",
                     badge: "Palabra más frecuente",
-                    title: "aceras",
-                    value: "27",
+                    title: "falta",
+                    value: "14",
                     unit: "menciones",
-                    percentage: "50,9 %",
-                    subtext: "Frecuencia sobre 53 respuestas válidas",
+                    percentage: "40,0 %",
+                    subtext: "Sin embargo, para la interpretación conceptual hay un término todavía más significativo: 'soledad' 10 respuestas — 28,6 %. <br> Frecuencia sobre 35 respuestas válidas",
                     icon: "font-weight: bold; font-family: sans-serif;",
                     isTextIcon: true,
                     bgClass: "bg-purple-subtle text-purple" // Puedes mapearlo a tus clases personalizadas
@@ -134,15 +112,15 @@ const SITE_DATA = {
                 {
                     type: "relation",
                     badge: "Relación más fuerte",
-                    title: "aceras ↔ calles",
-                    description: "Es la coocurrencia más frecuente identificada en las respuestas, conectada principalmente con <strong>movilidad e infraestructura</strong>.",
+                    title: "acceso ↔ soledad <br><br> espacio ↔ público",
+                    description: "sto muestra dos líneas de asociación particularmente relevantes:<strong> Acceso → soledad</strong> y <strong>Espacio público → condiciones de vida/movilidad</strong>",
                     icon: "fas fa-link",
                     bgClass: "bg-warning-subtle text-warning"
                 },
                 {
                     type: "corpus",
                     badge: "Corpus analizad",
-                    value: "559",
+                    value: "462",
                     unit: "palabras únicas",
                     description: "Términos distintos identificados después del proceso de limpieza y normalización del texto.",
                     icon: "fas fa-file-alt",
