@@ -1,4 +1,6 @@
-/* Variables de Color basadas en el diseño */
+/* ==========================================
+   VARIABLES DE COLOR Y BASE
+   ========================================== */
 :root {
     --blue-primary: #0056b3;
     --blue-dark: #004085;
@@ -6,6 +8,8 @@
     --blue-hero-end: #cae3ff;
     --text-dark: #2d3748;
     --bg-light: #f8faff;
+    --card-border: #e2e8f0;
+    --icon-bg-blue: #e8f1fd;
 }
 
 body {
@@ -14,7 +18,9 @@ body {
     color: var(--text-dark);
 }
 
-/* Navbar */
+/* ==========================================
+   NAVBAR PRINCIPAL Y MENÚ DE NAVEGACIÓN
+   ========================================== */
 .nav-tabs .nav-link {
     color: #6c757d;
     border: none;
@@ -35,7 +41,40 @@ body {
     font-weight: 700;
 }
 
-/* Hero Banner */
+/* Menú con iconos verticales */
+.custom-nav-item {
+    color: #4a5568 !important;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem !important;
+    border: none !important;
+    border-bottom: 3px solid transparent !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.custom-nav-item .nav-icon {
+    font-size: 1.4rem;
+    opacity: 0.8;
+}
+
+.custom-nav-item:hover {
+    color: var(--blue-primary) !important;
+}
+
+.custom-nav-item.active {
+    color: var(--blue-primary) !important;
+    background: none !important;
+    font-weight: 700;
+    border-bottom: 3px solid var(--blue-primary) !important;
+}
+
+.custom-nav-item.active .nav-icon {
+    opacity: 1;
+}
+
+/* ==========================================
+   HERO BANNER
+   ========================================== */
 .hero-banner {
     background: linear-gradient(135deg, var(--blue-hero-start) 0%, var(--blue-hero-end) 100%);
     padding: 10px 0;
@@ -55,14 +94,87 @@ body {
 .hero-illustration {
     max-height: 280px;
     object-fit: contain;
-    mix-blend-mode: multiply; /* Integra el fondo si el logo tiene fondo blanco */
+    mix-blend-mode: multiply;
     opacity: 0.85;
 }
 
-/* Cards Estilo Mockup */
+/* ==========================================
+   TARJETAS DE MÉTRICA DE RESUMEN (SUPERIORES)
+   ========================================== */
+#summary-metrics-container .card {
+    border: 1px solid var(--card-border);
+    border-radius: 14px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#summary-metrics-container .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 86, 179, 0.08) !important;
+}
+
+.badge-icon-bg {
+    background-color: var(--icon-bg-blue) !important;
+    color: var(--blue-primary) !important;
+}
+
+/* ==========================================
+   PESTAÑAS SEGUNDARIAS (GENERAL TABS)
+   ========================================== */
+#general-tabs .nav-link {
+    border-radius: 10px;
+    color: #4a5568;
+    background-color: transparent;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+
+#general-tabs .nav-link:hover {
+    background-color: #f1f5f9;
+    color: var(--blue-primary);
+}
+
+/* Estilo exacto de la pestaña activa en el mockup */
+#general-tabs .nav-link.active {
+    background-color: var(--blue-primary) !important;
+    color: #ffffff !important;
+    border-color: var(--blue-primary) !important;
+    box-shadow: 0 4px 12px rgba(0, 86, 179, 0.25);
+}
+
+/* ==========================================
+   FILTROS Y COMPONENTES DEL DASHBOARD
+   ========================================== */
+.form-select-sm {
+    border-color: #cbd5e1;
+    color: #334155;
+    font-size: 0.85rem;
+    padding-top: 0.45rem;
+    padding-bottom: 0.45rem;
+}
+
+.form-select-sm:focus {
+    border-color: var(--blue-primary);
+    box-shadow: 0 0 0 0.25rem rgba(0, 86, 179, 0.15);
+}
+
+#btn-clear-filters {
+    color: var(--blue-primary);
+    border-color: #cbd5e1;
+    background-color: #ffffff;
+    font-weight: 500;
+}
+
+#btn-clear-filters:hover {
+    background-color: var(--icon-bg-blue);
+    border-color: var(--blue-primary);
+}
+
+/* ==========================================
+   CARDS DE PREGUNTAS (GRID DE 21 CARDS)
+   ========================================== */
 .question-card {
     background: #ffffff;
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--card-border);
     border-radius: 12px;
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     height: 100%;
@@ -105,7 +217,9 @@ body {
     border-color: var(--blue-primary);
 }
 
-/* Footer */
+/* ==========================================
+   FOOTER
+   ========================================== */
 .footer {
     background-color: var(--blue-dark);
 }
@@ -129,35 +243,67 @@ body {
     }
 }
 
-/* Estilos específicos para el menú con iconos verticales */
-.custom-nav-item {
-    color: #4a5568 !important; /* Gris de los botones inactivos */
-    font-size: 0.95rem;
-    font-weight: 500;
-    padding: 0.75rem 1.5rem !important;
-    border: none !important;
-    border-bottom: 3px solid transparent !important;
-    transition: all 0.2s ease-in-out;
+/* ==========================================
+   COMPONENTES Y GRÁFICOS DE 'PERFIL PARTICIPANTES'
+   ========================================== */
+.style-micro {
+    font-size: 0.72rem;
 }
 
-.custom-nav-item .nav-icon {
-    font-size: 1.4rem; /* Tamaño del icono */
-    opacity: 0.8;
+.chart-row {
+    font-size: 0.88rem;
 }
 
-/* Estado al pasar el cursor (Hover) */
-.custom-nav-item:hover {
-    color: #0056b3 !important;
+.chart-label {
+    min-width: 140px;
+    max-width: 160px;
+    color: #4a5568;
 }
 
-/* Estado Activo (Pregunta Seleccionada) */
-.custom-nav-item.active {
-    color: #0056b3 !important; /* Azul destacado */
-    background: none !important;
+.chart-bar-track {
+    background-color: #f1f5f9;
+    height: 14px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.chart-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1e70cd 0%, #0056b3 100%);
+    border-radius: 20px;
+    transition: width 0.8s ease-in-out;
+}
+
+.chart-bar-fill-secondary {
+    background: #54a0ff;
+}
+
+.chart-bar-fill-neutral {
+    background: #cbd5e1;
+}
+
+.chart-value {
+    min-width: 45px;
     font-weight: 700;
-    border-bottom: 3px solid #0056b3 !important; /* Línea inferior idéntica a la imagen */
+    color: #2d3748;
 }
 
-.custom-nav-item.active .nav-icon {
-    opacity: 1;
+/* Gráfico tipo Dona */
+.donut-chart {
+    transform: rotate(-90deg);
+    border-radius: 50%;
+}
+
+.donut-ring {
+    stroke: #f1f5f9;
+}
+
+.donut-segment {
+    transition: stroke-dasharray 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .border-start-md {
+        border-left: 1px solid #e2e8f0;
+    }
 }
