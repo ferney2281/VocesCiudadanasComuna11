@@ -11,9 +11,8 @@ const SITE_DATA1 = {
         { id: "pregunta1", label: "Pregunta 1", icon: "fas fa-user-friends", active: false, url:"pregunta1.html" },
         { id: "pregunta2", label: "Pregunta 2", icon: "fas fa-heartbeat", active: true, url:"pregunta2.html" },
         { id: "pregunta3", label: "Pregunta 3", icon: "fas fa-users", active: false, url:"pregunta3.html" },
-        { id: "pregunta4", label: "Pregunta 4", icon: "fas fa-chart-bar", active: false, url:"" }
     ],
-    // NUEVO: Métricas del Resumen General para la Pregunta 2
+    // NUEVO: Métricas del RESUMEN GENERAL para la Pregunta 2
     summaryMetrics: [
         {
             label: "Respuestas analizadas",
@@ -57,6 +56,8 @@ const SITE_DATA1 = {
     
     // NUEVA ESTRUCTURA DE DATOS COMPLETA PARA EL ANÁLISIS TEMÁTICO
     thematicAnalysis: {
+
+        //RESUMEN ANALÍTICO
             summaryAnalyticalBlock: {
             title: "Resumen analítico",
             subtitle: "Síntesis de los principales hallazgos del análisis temático y léxico de las 35 respuestas válidas.",
@@ -128,6 +129,7 @@ const SITE_DATA1 = {
                 }
             ]
         },
+        //distribución de temas identificados
         visualizations: {
             title: "Distribución de temas identificados",
             subtitle: "El análisis temático permitió identificar seis temas principales en las respuestas abiertas de los participantes. Cada respuesta puede estar asociada a más de un tema, por lo que los porcentajes no suman 100 %.",
@@ -144,8 +146,67 @@ const SITE_DATA1 = {
                 { icon: "fas fa-handshake", theme: "Cultura ciudadana y convivencia", count: 8, percentage: "15,1 %" }
             ]
         },
+
+        //ANÁLISIS LÉXICO: Palabras más frecuentes, nube de palabras
+        lexicalBlock: {
+            title: "Análisis léxico",
+            description: "El análisis del vocabulario permite identificar los términos más utilizados por los participantes. La frecuencia de palabras muestra los conceptos con mayor presencia en sus respuestas, mientras que la nube de palabras ofrece una representación visual de los términos más relevantes del corpus.",
+            footnote: "La frecuencia corresponds al número de veces que cada palabra aparece en el conjunto de respuestas válidas (53). Se excluyeron palabras vacías, conectores y términos con menos de 2 ocurrencias.",
+            frequentWords: {
+                maxMentions: 30,
+                items: [
+                    { word: "aceras", count: 27, percentage: "50,9 %" },
+                    { word: "calles", count: 24, percentage: "45,3 %" },
+                    { word: "adulto", count: 21, percentage: "39,6 %" },
+                    { word: "mayores", count: 20, percentage: "37,7 %" },
+                    { word: "seguridad", count: 19, percentage: "35,8 %" },
+                    { word: "transporte", count: 17, percentage: "32,1 %" },
+                    { word: "apoyo", count: 16, percentage: "30,2 %" },
+                    { word: "espacios", count: 15, percentage: "28,3 %" },
+                    { word: "públicos", count: 14, percentage: "26,4 %" },
+                    { word: "soledad", count: 13, percentage: "24,5 %" }
+                ]
+            }, // Se cerró frequentWords correctamente con una coma para continuar
+
+            // Nube de palabras metida DENTRO de lexicalBlock
+            wordCloud: [
+                { text: "adultos mayores", size: "2.6rem", color: "#6f42c1", weight: "bold" },
+                { text: "seguridad", size: "2.0rem", color: "#198754", weight: "bold" },
+                { text: "aceras", size: "1.7rem", color: "#0d6efd", weight: "600" },
+                { text: "actividades", size: "1.2rem", color: "#8a3ffc", weight: "normal" },
+                { text: "salud", size: "1.2rem", color: "#0d6efd", weight: "normal" },
+                { text: "centros diurnos", size: "1.2rem", color: "#6f42c1", weight: "normal" },
+                { text: "soledad", size: "1.2rem", color: "#6f42c1", weight: "normal" },
+                { text: "alimentación", size: "1.1rem", color: "#20c997", weight: "normal" },
+                { text: "motos", size: "1.0rem", color: "#495057", weight: "normal" },
+                { text: "abandono", size: "1.0rem", color: "#6c757d", weight: "normal" },
+                { text: "compañía", size: "1.0rem", color: "#495057", weight: "normal" },
+                { text: "integración", size: "1.0rem", color: "#6f42c1", weight: "normal" },
+                { text: "acompañamiento", size: "1.0rem", color: "#0d6efd", weight: "normal" },
+                { text: "caminar", size: "1.0rem", color: "#212529", weight: "normal" }
+            ]
+        } ,
+
+        //RED DE COOCURRENCIAS
+        networkBlock: {
+            title: "Red de coocurrencias",
+            description: "La red de coocurrencias muestra qué palabras aparecen conjuntamente dentro de las mismas respuestas. Los nodos representan palabras y las aristas (líneas) indican su coocurrencia. El tamaño del nodo refleja la frecuencia de la palabra y el grosor de la línea la fuerza de la relación.",
+            badgeWords: 28,
+            badgeCooccurrences: 86,
+            footnote: "La red muestra las palabras más relevantes del corpus y sus coocurrencias más significativas. Se excluyeron conectores, palabras vacías y términos con muy baja frecuencia.",
+            guideTitle: "¿Cómo leer esta red?",
+            guideText: "Los nodos más grandes son las palabras más frecuentes. Las líneas más gruesas indican relaciones más fuertes (aparecen juntas con mayor frecuencia). Los colores agrupan palabras por temática.",
+            groups: [
+                { color: "#3b5998", theme: "Movilidad e infraestructura urbana" },
+                { color: "#33bfa8", theme: "Seguridad e inseguridad" },
+                { color: "#72c272", theme: "Servicios y apoyo al adulto mayor" },
+                { color: "#8e67b9", theme: "Soledad y aislamiento social" },
+                { color: "#fff1b3", theme: "Espacio público, tránsito y contaminación" },
+                { color: "#ffa630", theme: "Cultura ciudadana y convivencia" }
+            ]
+        },
         
-        // 2. Mapa Temático: Relación entre temas y subtemas
+        // MAPA TEMATICO
         map: [
             {
                 id: "map-1",
@@ -173,15 +234,8 @@ const SITE_DATA1 = {
             }
         ],
 
-        // 3. Tabla de Temas
-        table: [
-            { icon: "fas fa-hands-helping", color: "#9b51e0", theme: "Servicios y apoyo al adulto mayor", count: 22, percentage: "29.7%", interpretation: "Principal preocupación: insuficiencia de programas y apoyos específicos." },
-            { icon: "fas fa-walking", color: "#2f80ed", theme: "Movilidad e infraestructura urbana", count: 21, percentage: "28.4%", interpretation: "Entorno físico que dificulta la movilidad segura y autónoma." },
-            { icon: "fas fa-shield-alt", color: "#27ae60", theme: "Seguridad e inseguridad", count: 20, percentage: "27.0%", interpretation: "Percepción constante de inseguridad que limita la participación social." },
-            { icon: "fas fa-user-clock", color: "#f2994a", theme: "Soledad y aislamiento social", count: 11, percentage: "14.9%", interpretation: "Dimensión social del bienestar que impacta la calidad de vida." }
-        ],
 
-        // 4. Citas representativas
+        // CITAS REPRESENTATIVAS POR TEMA
         quotes: {
             title: "Citas representativas por tema",
             subtitle: "Evidencias textuales seleccionadas de las respuestas de los participantes.",
@@ -255,64 +309,14 @@ const SITE_DATA1 = {
                 }
             ]
         },
-
-        // 5. Bloque Léxico Unificado correctamente
-        lexicalBlock: {
-            title: "Análisis léxico",
-            description: "El análisis del vocabulario permite identificar los términos más utilizados por los participantes. La frecuencia de palabras muestra los conceptos con mayor presencia en sus respuestas, mientras que la nube de palabras ofrece una representación visual de los términos más relevantes del corpus.",
-            footnote: "La frecuencia corresponds al número de veces que cada palabra aparece en el conjunto de respuestas válidas (53). Se excluyeron palabras vacías, conectores y términos con menos de 2 ocurrencias.",
-            frequentWords: {
-                maxMentions: 30,
-                items: [
-                    { word: "aceras", count: 27, percentage: "50,9 %" },
-                    { word: "calles", count: 24, percentage: "45,3 %" },
-                    { word: "adulto", count: 21, percentage: "39,6 %" },
-                    { word: "mayores", count: 20, percentage: "37,7 %" },
-                    { word: "seguridad", count: 19, percentage: "35,8 %" },
-                    { word: "transporte", count: 17, percentage: "32,1 %" },
-                    { word: "apoyo", count: 16, percentage: "30,2 %" },
-                    { word: "espacios", count: 15, percentage: "28,3 %" },
-                    { word: "públicos", count: 14, percentage: "26,4 %" },
-                    { word: "soledad", count: 13, percentage: "24,5 %" }
-                ]
-            }, // Se cerró frequentWords correctamente con una coma para continuar
-
-            // Nube de palabras metida DENTRO de lexicalBlock
-            wordCloud: [
-                { text: "adultos mayores", size: "2.6rem", color: "#6f42c1", weight: "bold" },
-                { text: "seguridad", size: "2.0rem", color: "#198754", weight: "bold" },
-                { text: "aceras", size: "1.7rem", color: "#0d6efd", weight: "600" },
-                { text: "actividades", size: "1.2rem", color: "#8a3ffc", weight: "normal" },
-                { text: "salud", size: "1.2rem", color: "#0d6efd", weight: "normal" },
-                { text: "centros diurnos", size: "1.2rem", color: "#6f42c1", weight: "normal" },
-                { text: "soledad", size: "1.2rem", color: "#6f42c1", weight: "normal" },
-                { text: "alimentación", size: "1.1rem", color: "#20c997", weight: "normal" },
-                { text: "motos", size: "1.0rem", color: "#495057", weight: "normal" },
-                { text: "abandono", size: "1.0rem", color: "#6c757d", weight: "normal" },
-                { text: "compañía", size: "1.0rem", color: "#495057", weight: "normal" },
-                { text: "integración", size: "1.0rem", color: "#6f42c1", weight: "normal" },
-                { text: "acompañamiento", size: "1.0rem", color: "#0d6efd", weight: "normal" },
-                { text: "caminar", size: "1.0rem", color: "#212529", weight: "normal" }
-            ]
-        } ,// Cierre definitivo de lexicalBlock
-        // Dentro de SITE_DATA.thematicAnalysis:
-        networkBlock: {
-            title: "Red de coocurrencias",
-            description: "La red de coocurrencias muestra qué palabras aparecen conjuntamente dentro de las mismas respuestas. Los nodos representan palabras y las aristas (líneas) indican su coocurrencia. El tamaño del nodo refleja la frecuencia de la palabra y el grosor de la línea la fuerza de la relación.",
-            badgeWords: 28,
-            badgeCooccurrences: 86,
-            footnote: "La red muestra las palabras más relevantes del corpus y sus coocurrencias más significativas. Se excluyeron conectores, palabras vacías y términos con muy baja frecuencia.",
-            guideTitle: "¿Cómo leer esta red?",
-            guideText: "Los nodos más grandes son las palabras más frecuentes. Las líneas más gruesas indican relaciones más fuertes (aparecen juntas con mayor frecuencia). Los colores agrupan palabras por temática.",
-            groups: [
-                { color: "#3b5998", theme: "Movilidad e infraestructura urbana" },
-                { color: "#33bfa8", theme: "Seguridad e inseguridad" },
-                { color: "#72c272", theme: "Servicios y apoyo al adulto mayor" },
-                { color: "#8e67b9", theme: "Soledad y aislamiento social" },
-                { color: "#fff1b3", theme: "Espacio público, tránsito y contaminación" },
-                { color: "#ffa630", theme: "Cultura ciudadana y convivencia" }
-            ]
-        }
+      
+        // 3. Tabla de Temas
+        table: [
+            { icon: "fas fa-hands-helping", color: "#9b51e0", theme: "Servicios y apoyo al adulto mayor", count: 22, percentage: "29.7%", interpretation: "Principal preocupación: insuficiencia de programas y apoyos específicos." },
+            { icon: "fas fa-walking", color: "#2f80ed", theme: "Movilidad e infraestructura urbana", count: 21, percentage: "28.4%", interpretation: "Entorno físico que dificulta la movilidad segura y autónoma." },
+            { icon: "fas fa-shield-alt", color: "#27ae60", theme: "Seguridad e inseguridad", count: 20, percentage: "27.0%", interpretation: "Percepción constante de inseguridad que limita la participación social." },
+            { icon: "fas fa-user-clock", color: "#f2994a", theme: "Soledad y aislamiento social", count: 11, percentage: "14.9%", interpretation: "Dimensión social del bienestar que impacta la calidad de vida." }
+        ],
 
     }, // Cierre definitivo de thematicAnalysis,
 

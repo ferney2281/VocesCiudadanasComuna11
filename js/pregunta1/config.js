@@ -5,7 +5,6 @@ const SITE_DATA = {
         { id: "pregunta1", label: "Pregunta 1", icon: "fas fa-user-friends", active: true, url:"pregunta1.html" },
         { id: "pregunta2", label: "Pregunta 2", icon: "fas fa-heartbeat", active: false, url:"pregunta2.html" },
         { id: "pregunta3", label: "Pregunta 3", icon: "fas fa-users", active: false, url:"pregunta3.html" },
-        { id: "pregunta4", label: "Pregunta 4", icon: "fas fa-chart-bar", active: false, url:"" }
     ],
     // NUEVO: Métricas del Resumen General para la Pregunta 1
     summaryMetrics: [
