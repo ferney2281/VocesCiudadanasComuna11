@@ -1,7 +1,7 @@
 const SITE_DATA = {
     // Configuración del Menú de navegación superior con iconos asignados
     navigation: [
-        { id: "index", label: "General", icon: "fas fa-home", active: false, url:"../../index.html" },
+        { id: "index", label: "General", icon: "fas fa-home", active: false, url:"../index.html" },
         { id: "pregunta1", label: "Pregunta 1", icon: "fas fa-user-friends", active: true, url:"pregunta1.html" },
         { id: "pregunta2", label: "Pregunta 2", icon: "fas fa-heartbeat", active: false, url:"pregunta2.html" },
         { id: "pregunta3", label: "Pregunta 3", icon: "fas fa-users", active: false, url:"pregunta3.html" },
