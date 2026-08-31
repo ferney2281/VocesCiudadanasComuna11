@@ -7,7 +7,7 @@ const SITE_DATA1 = {
     },
   
     navigation: [
-        { id: "index", label: "General", icon: "fas fa-home", active: false, url:"../../index.html" },
+        { id: "index", label: "General", icon: "fas fa-home", active: false, url:"../index.html" },
         { id: "pregunta1", label: "Pregunta 1", icon: "fas fa-user-friends", active: false, url:"pregunta1.html" },
         { id: "pregunta2", label: "Pregunta 2", icon: "fas fa-heartbeat", active: false, url:"pregunta2.html" },
         { id: "pregunta3", label: "Pregunta 3", icon: "fas fa-users", active: true, url:"pregunta3.html" }
