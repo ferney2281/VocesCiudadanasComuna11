@@ -474,7 +474,7 @@ function renderThematicVisualizations(visualData) {
                     <div class="col-md-3"></div>
                     <div class="col-md-7">
                         <div class="d-flex justify-content-between text-muted small px-1" style="font-size: 0.75rem;">
-                            <span>0</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span><span>35</span>
+                            <span>0</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30</span><span>35</span><span>40</span><span>45</span><span>50</span><span>55</span>
                         </div>
                         <div class="text-center text-muted small mt-1 fw-semibold" style="font-size: 0.75rem;">Número de respuestas</div>
                     </div>
@@ -639,176 +639,204 @@ function renderThematicNetworkBlock(networkData) {
             <!-- Contenedor ajustado sin restricciones fijas cortantes -->
             <div class="border rounded-3 bg-white p-2 p-md-4 position-relative overflow-hidden d-flex justify-content-center align-items-center shadow-sm" style="width: 100%; min-height: 450px;">
                 <!-- SVG con viewBox corregido (1020x960) y preserveAspectRatio -->
-                <svg viewBox="0 0 1020 960" preserveAspectRatio="xMidYMid meet" class="w-100 h-auto" style="max-height: 650px;" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <filter id="network-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                            <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.15"/>
-                        </filter>
-                    </defs>
+               <svg viewBox="0 0 1000 800" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+                        <style>
+                            .node-text {
+                                font-weight: 600;
+                                text-anchor: middle;
+                                dominant-baseline: central;
+                            }
+                            .text-white { fill: #0a0a0a;  }
+                            .text-dark-blue { fill: #103b6d; }
+                            .text-dark-orange { fill: #612800; }
+                            .text-dark-yellow { fill: #544400; }
+                            .text-dark-purple { fill: #33175c; }
+                            .text-dark-green { fill: #12451b; }
+                            .text-dark-teal { fill: #08403d; }
+                            .text-dark-rose { fill: #4a1525; }
+                        </style>
 
-                    <!-- ================= ARISTAS (CONEXIONES Y PESOS) ================= -->
-                    <!-- Clúster Azul (Infraestructura / Movilidad) -->
-                    <line x1="260" y1="330" x2="310" y2="70" stroke="#a3c7f7" stroke-width="7" /> <!-- aceras - motos (7) -->
-                    <line x1="260" y1="330" x2="480" y2="210" stroke="#a3c7f7" stroke-width="7" /> <!-- aceras - carros (7) -->
-                    <line x1="260" y1="330" x2="100" y2="440" stroke="#1f65b7" stroke-width="8" /> <!-- aceras - calle (8) -->
-                    <line x1="260" y1="330" x2="130" y2="190" stroke="#a3c7f7" stroke-width="4" /> <!-- aceras - espacio (4) -->
-                    <line x1="260" y1="330" x2="280" y2="570" stroke="#a3c7f7" stroke-width="3" /> <!-- aceras - movilidad (3) -->
-                    <line x1="260" y1="330" x2="430" y2="610" stroke="#a3c7f7" stroke-width="2" /> <!-- aceras - caminar (2) -->
-                    
-                    <line x1="310" y1="70" x2="130" y2="190" stroke="#bad5f5" stroke-width="2" /> <!-- motos - espacio (2) -->
-                    <line x1="310" y1="70" x2="480" y2="210" stroke="#bad5f5" stroke-width="5" /> <!-- motos - carros (5) -->
-                    <line x1="130" y1="190" x2="100" y2="440" stroke="#bad5f5" stroke-width="3" /> <!-- espacio - calle (3) -->
-                    <line x1="100" y1="440" x2="280" y2="570" stroke="#bad5f5" stroke-width="2" /> <!-- calle - movilidad (2) -->
-                    <line x1="280" y1="570" x2="430" y2="610" stroke="#bad5f5" stroke-width="3" /> <!-- movilidad - caminar (3) -->
+                        <!-- ==================== CONEXIONES / LÍNEAS ==================== -->
+                        <g id="connections" stroke-linecap="round" opacity="0.85">
+                            <!-- Interconexiones Secundarias / Cruzadas del Mapa -->
+                            <line x1="220" y1="290" x2="180" y2="530" stroke="#f6ad55" stroke-width="1" opacity="0.3" />
+                            <line x1="220" y1="290" x2="490" y2="180" stroke="#f6ad55" stroke-width="1.5" opacity="0.4" />
+                            <line x1="180" y1="530" x2="480" y2="605" stroke="#f6e05e" stroke-width="1" opacity="0.3" />
+                            <line x1="480" y1="605" x2="780" y2="560" stroke="#b794f4" stroke-width="1" opacity="0.3" />
+                            <line x1="780" y1="560" x2="770" y2="260" stroke="#68d391" stroke-width="1" opacity="0.3" />
+                            <line x1="770" y1="260" x2="490" y2="180" stroke="#4fd1c5" stroke-width="1" opacity="0.3" />
 
-                    <!-- Conexiones Inter-cluster (Azul a Verde) -->
-                    <line x1="100" y1="440" x2="70" y2="740" stroke="#5bb38a" stroke-width="6" /> <!-- calle - habitantes (6) -->
-                    <line x1="480" y1="210" x2="570" y2="480" stroke="#71c598" stroke-width="2" /> <!-- carros - inseguridad (2) -->
-                    <line x1="260" y1="330" x2="570" y2="480" stroke="#71c598" stroke-width="3" /> <!-- aceras - inseguridad (3) -->
+                            <!-- Enlaces a Nodos Intermedios/Rosa -->
+                            <line x1="510" y1="380" x2="600" y2="300" stroke="#f472b6" stroke-width="2" />
+                            <line x1="510" y1="380" x2="685" y2="350" stroke="#f472b6" stroke-width="2" />
+                            <line x1="510" y1="380" x2="715" y2="390" stroke="#f472b6" stroke-width="2" />
+                            <line x1="510" y1="380" x2="635" y2="425" stroke="#f472b6" stroke-width="2" />
+                            
+                            <line x1="685" y1="350" x2="770" y2="260" stroke="#f472b6" stroke-width="1.5" opacity="0.5" />
+                            <line x1="635" y1="425" x2="780" y2="560" stroke="#f472b6" stroke-width="1.5" opacity="0.5" />
 
-                    <!-- Clúster Verde (Seguridad / Entorno) -->
-                    <line x1="70" y1="740" x2="290" y2="910" stroke="#a1e0c0" stroke-width="2" /> <!-- habitantes - personas (2) -->
-                    <line x1="290" y1="910" x2="490" y2="860" stroke="#a1e0c0" stroke-width="3" /> <!-- personas - basuras (3) -->
-                    <line x1="490" y1="860" x2="570" y2="480" stroke="#a1e0c0" stroke-width="2" /> <!-- basuras - inseguridad (2) -->
-                    <line x1="490" y1="860" x2="650" y2="820" stroke="#a1e0c0" stroke-width="4" /> <!-- basuras - ruido (4) -->
-                    <line x1="570" y1="480" x2="650" y2="820" stroke="#a1e0c0" stroke-width="3" /> <!-- inseguridad - ruido (3) -->
+                            <!-- Conexiones Principales desde 'Personas mayores' -->
+                            <line x1="510" y1="380" x2="490" y2="180" stroke="#3182ce" stroke-width="5" /> <!-- a Movilidad -->
+                            <line x1="510" y1="380" x2="220" y2="290" stroke="#ed8936" stroke-width="5" /> <!-- a Vivienda -->
+                            <line x1="510" y1="380" x2="180" y2="530" stroke="#ecc94b" stroke-width="2" /> <!-- a Ambiente -->
+                            <line x1="510" y1="380" x2="480" y2="605" stroke="#8b5cf6" stroke-width="5" /> <!-- a Salud -->
+                            <line x1="510" y1="380" x2="780" y2="560" stroke="#48bb78" stroke-width="3" /> <!-- a Soledad -->
+                            <line x1="510" y1="380" x2="770" y2="260" stroke="#319795" stroke-width="3" opacity="0.4" /> <!-- a Seguridad (vía rosa) -->
 
-                    <!-- Conexiones Inter-cluster (Verde a Morado) -->
-                    <line x1="570" y1="480" x2="780" y2="190" stroke="#9b83cf" stroke-width="6" /> <!-- inseguridad - soledad (6) -->
-                    <line x1="570" y1="480" x2="800" y2="520" stroke="#bda2df" stroke-width="3" /> <!-- inseguridad - falta (3) -->
-                    <line x1="650" y1="820" x2="830" y2="880" stroke="#bda2df" stroke-width="2" /> <!-- ruido - mayores (2) -->
+                            <!-- Conexiones de 'Movilidad' (Azul) -->
+                            <line x1="490" y1="180" x2="355" y2="200" stroke="#63b3ed" stroke-width="1.5" /> <!-- rampas -->
+                            <line x1="490" y1="180" x2="365" y2="155" stroke="#63b3ed" stroke-width="1.5" /> <!-- barreras -->
+                            <line x1="490" y1="180" x2="405" y2="105" stroke="#63b3ed" stroke-width="1.5" /> <!-- aceras -->
+                            <line x1="490" y1="180" x2="490" y2="70" stroke="#63b3ed" stroke-width="1.5" /> <!-- andenes -->
+                            <line x1="490" y1="180" x2="545" y2="90" stroke="#63b3ed" stroke-width="1.5" /> <!-- infraestructura -->
+                            <line x1="490" y1="180" x2="625" y2="125" stroke="#63b3ed" stroke-width="1.5" /> <!-- espacio público -->
+                            <line x1="490" y1="180" x2="635" y2="170" stroke="#63b3ed" stroke-width="1.5" /> <!-- señalización -->
+                            <line x1="490" y1="180" x2="580" y2="230" stroke="#63b3ed" stroke-width="1.5" /> <!-- semáforos -->
 
-                    <!-- Clúster Morado (Cuidado / Salud / Red) -->
-                    <line x1="780" y1="190" x2="940" y2="370" stroke="#d5c2f0" stroke-width="2" /> <!-- soledad - salud (2) -->
-                    <line x1="780" y1="190" x2="800" y2="520" stroke="#d5c2f0" stroke-width="3" /> <!-- soledad - falta (3) -->
-                    <line x1="940" y1="370" x2="800" y2="520" stroke="#9b83cf" stroke-width="5" /> <!-- salud - falta (5) -->
-                    <line x1="940" y1="370" x2="950" y2="730" stroke="#d5c2f0" stroke-width="3" /> <!-- salud - actividades (3) -->
-                    <line x1="800" y1="520" x2="830" y2="880" stroke="#9b83cf" stroke-width="5" /> <!-- falta - mayores (5) -->
-                    <line x1="950" y1="730" x2="830" y2="880" stroke="#d5c2f0" stroke-width="2" /> <!-- actividades - mayores (2) -->
+                            <!-- Conexiones de 'Vivienda' (Naranja) -->
+                            <line x1="220" y1="290" x2="190" y2="185" stroke="#fbd38d" stroke-width="1.5" /> <!-- costo de vida -->
+                            <line x1="220" y1="290" x2="270" y2="200" stroke="#fbd38d" stroke-width="1.5" /> <!-- sérvicios (top) -->
+                            <line x1="220" y1="290" x2="140" y2="205" stroke="#fbd38d" stroke-width="1.5" /> <!-- pobreza -->
+                            <line x1="220" y1="290" x2="110" y2="260" stroke="#fbd38d" stroke-width="1.5" /> <!-- servicios -->
+                            <line x1="220" y1="290" x2="125" y2="310" stroke="#fbd38d" stroke-width="1.5" /> <!-- programas -->
+                            <line x1="220" y1="290" x2="145" y2="355" stroke="#fbd38d" stroke-width="1.5" /> <!-- información -->
+                            <line x1="220" y1="290" x2="200" y2="380" stroke="#fbd38d" stroke-width="1.5" /> <!-- participación -->
 
-                    <!-- ================= ETIQUETAS DE PESO (NÚMEROS) ================= -->
-                    <!-- Números Azul -->
-                    <text x="275" y="200" fill="#1f65b7" font-size="16" font-weight="bold">7</text>
-                    <text x="375" y="255" fill="#1f65b7" font-size="16" font-weight="bold">7</text>
-                    <text x="170" y="370" fill="#1f65b7" font-size="18" font-weight="bold">8</text>
-                    <text x="195" y="250" fill="#1f65b7" font-size="15" font-weight="bold">4</text>
-                    <text x="260" y="450" fill="#1f65b7" font-size="15" font-weight="bold">3</text>
-                    <text x="350" y="480" fill="#1f65b7" font-size="15" font-weight="bold">2</text>
-                    <text x="210" y="120" fill="#1f65b7" font-size="15" font-weight="bold">2</text>
-                    <text x="400" y="130" fill="#1f65b7" font-size="15" font-weight="bold">5</text>
-                    <text x="100" y="310" fill="#1f65b7" font-size="15" font-weight="bold">3</text>
-                    <text x="180" y="520" fill="#1f65b7" font-size="15" font-weight="bold">2</text>
-                    <text x="360" y="605" fill="#1f65b7" font-size="15" font-weight="bold">3</text>
+                            <!-- Conexiones de 'Ambiente' (Amarillo) -->
+                            <line x1="180" y1="530" x2="120" y2="460" stroke="#faf089" stroke-width="1.5" /> <!-- ruido -->
+                            <line x1="180" y1="530" x2="95" y2="505" stroke="#faf089" stroke-width="1.5" /> <!-- basura -->
+                            <line x1="180" y1="530" x2="98" y2="575" stroke="#faf089" stroke-width="1.5" /> <!-- contaminación -->
+                            <line x1="180" y1="530" x2="125" y2="628" stroke="#faf089" stroke-width="1.5" /> <!-- animales -->
+                            <line x1="180" y1="530" x2="205" y2="640" stroke="#faf089" stroke-width="1.5" /> <!-- parques -->
 
-                    <!-- Números Verdes e Intersecciones -->
-                    <text x="70" y="590" fill="#1f65b7" font-size="18" font-weight="bold">6</text>
-                    <text x="530" y="340" fill="#444" font-size="15" font-weight="bold">2</text>
-                    <text x="420" y="400" fill="#444" font-size="15" font-weight="bold">3</text>
-                    <text x="170" y="840" fill="#444" font-size="15" font-weight="bold">2</text>
-                    <text x="380" y="900" fill="#444" font-size="15" font-weight="bold">3</text>
-                    <text x="620" y="660" fill="#444" font-size="15" font-weight="bold">3</text>
-                    <text x="575" y="860" fill="#444" font-size="15" font-weight="bold">4</text>
+                            <!-- Conexiones de 'Salud' (Morado) -->
+                            <line x1="480" y1="605" x2="370" y2="580" stroke="#c084fc" stroke-width="1.5" /> <!-- atención médica -->
+                            <line x1="480" y1="605" x2="350" y2="660" stroke="#c084fc" stroke-width="1.5" /> <!-- salud mental (izq) -->
+                            <line x1="480" y1="605" x2="410" y2="720" stroke="#c084fc" stroke-width="1.5" /> <!-- cuidadores -->
+                            <line x1="480" y1="605" x2="500" y2="745" stroke="#c084fc" stroke-width="1.5" /> <!-- bienestar -->
+                            <line x1="480" y1="605" x2="585" y2="700" stroke="#c084fc" stroke-width="1.5" /> <!-- alimentación -->
+                            <line x1="480" y1="605" x2="600" y2="640" stroke="#c084fc" stroke-width="1.5" /> <!-- salud mental (der) -->
 
-                    <!-- Números Morados e Intersecciones -->
-                    <text x="670" y="320" fill="#8e67b9" font-size="18" font-weight="bold">6</text>
-                    <text x="700" y="500" fill="#444" font-size="15" font-weight="bold">3</text>
-                    <text x="870" y="270" fill="#8e67b9" font-size="15" font-weight="bold">2</text>
-                    <text x="800" y="360" fill="#8e67b9" font-size="15" font-weight="bold">3</text>
-                    <text x="880" y="440" fill="#8e67b9" font-size="15" font-weight="bold">5</text>
-                    <text x="830" y="700" fill="#8e67b9" font-size="18" font-weight="bold">5</text>
-                    <text x="960" y="560" fill="#8e67b9" font-size="15" font-weight="bold">3</text>
-                    <text x="900" y="820" fill="#8e67b9" font-size="15" font-weight="bold">2</text>
-                    <text x="740" y="870" fill="#444" font-size="15" font-weight="bold">2</text>
+                            <!-- Conexiones de 'Soledad' (Verde) -->
+                            <line x1="780" y1="560" x2="820" y2="455" stroke="#9ae6b4" stroke-width="1.5" /> <!-- aislamiento -->
+                            <line x1="780" y1="560" x2="880" y2="500" stroke="#9ae6b4" stroke-width="1.5" /> <!-- familia -->
+                            <line x1="780" y1="560" x2="880" y2="585" stroke="#9ae6b4" stroke-width="1.5" /> <!-- compañía -->
+                            <line x1="780" y1="560" x2="850" y2="650" stroke="#9ae6b4" stroke-width="1.5" /> <!-- apoyo -->
+                            <line x1="780" y1="560" x2="740" y2="675" stroke="#9ae6b4" stroke-width="1.5" /> <!-- actividades -->
 
-                    <!-- ================= NODOS (CIRCULOS Y TEXTO) ================= -->
-                    <!-- Clúster Azul -->
-                    <g filter="url(#network-shadow)">
-                        <circle cx="260" cy="330" r="46" fill="#1f65b7" />
-                        <text x="260" y="335" text-anchor="middle" fill="white" font-size="15" font-weight="bold">aceras</text>
-                    </g>
+                            <!-- Conexiones de 'Seguridad' (Turquesa/Verde agua) -->
+                            <line x1="770" y1="260" x2="740" y2="105" stroke="#81e6d9" stroke-width="1.5" /> <!-- robos -->
+                            <line x1="770" y1="260" x2="840" y2="95" stroke="#81e6d9" stroke-width="1.5" /> <!-- delincuencia -->
+                            <line x1="770" y1="260" x2="870" y2="155" stroke="#81e6d9" stroke-width="1.5" /> <!-- miedo -->
+                            <line x1="770" y1="260" x2="895" y2="215" stroke="#81e6d9" stroke-width="1.5" /> <!-- policía -->
+                            <line x1="770" y1="260" x2="870" y2="285" stroke="#81e6d9" stroke-width="1.5" /> <!-- drogas -->
+                            <line x1="770" y1="260" x2="815" y2="320" stroke="#81e6d9" stroke-width="1.5" /> <!-- riesgo -->
+                        </g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="100" cy="440" r="38" fill="#2970c3" />
-                        <text x="100" y="445" text-anchor="middle" fill="white" font-size="15" font-weight="bold">calle</text>
-                    </g>
+                        <!-- ==================== NODOS SECUNDARIOS ==================== -->
+                        <g id="secondary-nodes">
+                            <!-- Rama Movilidad (Azul) -->
+                            <g transform="translate(355, 200)"><circle r="16" fill="#bee3f8" /><text class="node-text text-dark-blue" font-size="12">rampas</text></g>
+                            <g transform="translate(365, 155)"><circle r="16" fill="#bee3f8" /><text class="node-text text-dark-blue" font-size="12">barreras</text></g>
+                            <g transform="translate(405, 105)"><circle r="16" fill="#bee3f8" /><text class="node-text text-dark-blue" font-size="12">aceras</text></g>
+                            <g transform="translate(490, 70)"><circle r="18" fill="#2b6cb0" /><text class="node-text text-white" font-size="12">andenes</text></g>
+                            <g transform="translate(545, 90)"><circle r="16" fill="#bee3f8" /><text class="node-text text-dark-blue" font-size="12">infraestructura</text></g>
+                            <g transform="translate(625, 125)"><circle r="16" fill="#bee3f8" /><text class="node-text text-dark-blue" font-size="12">espacio público</text></g>
+                            <g transform="translate(635, 170)"><circle r="16" fill="#2b6cb0" /><text class="node-text text-white" font-size="12">señalización</text></g>
+                            <g transform="translate(580, 230)"><circle r="16" fill="#2b6cb0" /><text class="node-text text-white" font-size="12">semáforos</text></g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="310" cy="70" r="36" fill="#2970c3" />
-                        <text x="310" y="75" text-anchor="middle" fill="white" font-size="14" font-weight="bold">motos</text>
-                    </g>
+                            <!-- Rama Vivienda (Naranja) -->
+                            <g transform="translate(190, 185)"><circle r="16" fill="#feebc8" /><text class="node-text text-dark-orange" font-size="12">costo de vida</text></g>
+                            <g transform="translate(270, 200)"><circle r="14" fill="#feebc8" /><text class="node-text text-dark-orange" font-size="12">sérvicios</text></g>
+                            <g transform="translate(140, 205)"><circle r="15" fill="#feebc8" /><text class="node-text text-dark-orange" font-size="12">pobreza</text></g>
+                            <g transform="translate(110, 260)"><circle r="14" fill="#feebc8" /><text class="node-text text-dark-orange" font-size="12">servicios</text></g>
+                            <g transform="translate(125, 310)"><circle r="14" fill="#feebc8" /><text class="node-text text-dark-orange" font-size="12">programas</text></g>
+                            <g transform="translate(145, 355)"><circle r="14" fill="#feebc8" /><text class="node-text text-dark-orange" font-size="12">información</text></g>
+                            <g transform="translate(200, 380)"><circle r="15" fill="#feebc8" /><text class="node-text text-dark-orange" font-size="12">participación</text></g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="480" cy="210" r="35" fill="#2970c3" />
-                        <text x="480" y="215" text-anchor="middle" fill="white" font-size="14" font-weight="bold">carros</text>
-                    </g>
+                            <!-- Rama Ambiente (Amarillo) -->
+                            <g transform="translate(120, 460)"><circle r="15" fill="#fefcbf" /><text class="node-text text-dark-yellow" font-size="12">ruido</text></g>
+                            <g transform="translate(95, 505)"><circle r="15" fill="#fefcbf" /><text class="node-text text-dark-yellow" font-size="12">basura</text></g>
+                            <g transform="translate(98, 575)"><circle r="15" fill="#fefcbf" /><text class="node-text text-dark-yellow" font-size="12">contaminación</text></g>
+                            <g transform="translate(125, 628)"><circle r="15" fill="#fefcbf" /><text class="node-text text-dark-yellow" font-size="12">animales</text></g>
+                            <g transform="translate(205, 640)"><circle r="16" fill="#fefcbf" /><text class="node-text text-dark-yellow" font-size="12">parques</text></g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="130" cy="190" r="32" fill="#2970c3" />
-                        <text x="130" y="194" text-anchor="middle" fill="white" font-size="13" font-weight="bold">espacio</text>
-                    </g>
+                            <!-- Rama Salud (Morado) -->
+                            <g transform="translate(370, 580)"><circle r="16" fill="#e9d8fd" /><text class="node-text text-dark-purple" font-size="12">atención médica</text></g>
+                            <g transform="translate(350, 660)"><circle r="16" fill="#e9d8fd" /><text class="node-text text-dark-purple" font-size="12">salud mental</text></g>
+                            <g transform="translate(410, 720)"><circle r="16" fill="#e9d8fd" /><text class="node-text text-dark-purple" font-size="12">cuidadores</text></g>
+                            <g transform="translate(500, 745)"><circle r="15" fill="#e9d8fd" /><text class="node-text text-dark-purple" font-size="12">bienestar</text></g>
+                            <g transform="translate(585, 700)"><circle r="16" fill="#8b5cf6" /><text class="node-text text-white" font-size="12">alimentación</text></g>
+                            <g transform="translate(600, 640)"><circle r="16" fill="#e9d8fd" /><text class="node-text text-dark-purple" font-size="12">salud mental</text></g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="280" cy="570" r="32" fill="#2970c3" />
-                        <text x="280" y="574" text-anchor="middle" fill="white" font-size="12.5" font-weight="bold">movilidad</text>
-                    </g>
+                            <!-- Rama Soledad (Verde) -->
+                            <g transform="translate(820, 455)"><circle r="16" fill="#c6f6d5" /><text class="node-text text-dark-green" font-size="12">aislamiento</text></g>
+                            <g transform="translate(880, 500)"><circle r="16" fill="#c6f6d5" /><text class="node-text text-dark-green" font-size="12">familia</text></g>
+                            <g transform="translate(880, 585)"><circle r="16" fill="#c6f6d5" /><text class="node-text text-dark-green" font-size="12">compañía</text></g>
+                            <g transform="translate(850, 650)"><circle r="16" fill="#c6f6d5" /><text class="node-text text-dark-green" font-size="12">apoyo</text></g>
+                            <g transform="translate(740, 675)"><circle r="16" fill="#c6f6d5" /><text class="node-text text-dark-green" font-size="12">actividades</text></g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="430" cy="610" r="30" fill="#2970c3" />
-                        <text x="430" y="614" text-anchor="middle" fill="white" font-size="12" font-weight="bold">caminar</text>
-                    </g>
+                            <!-- Rama Seguridad (Turquesa) -->
+                            <g transform="translate(740, 105)"><circle r="16" fill="#b2f5ea" /><text class="node-text text-dark-teal" font-size="12">robos</text></g>
+                            <g transform="translate(840, 95)"><circle r="17" fill="#319795" /><text class="node-text text-white" font-size="12">delincuencia</text></g>
+                            <g transform="translate(870, 155)"><circle r="16" fill="#b2f5ea" /><text class="node-text text-dark-teal" font-size="12">miedo</text></g>
+                            <g transform="translate(895, 215)"><circle r="16" fill="#b2f5ea" /><text class="node-text text-dark-teal" font-size="12">policía</text></g>
+                            <g transform="translate(870, 285)"><circle r="17" fill="#319795" /><text class="node-text text-white" font-size="12">drogas</text></g>
+                            <g transform="translate(815, 320)"><circle r="16" fill="#b2f5ea" /><text class="node-text text-dark-teal" font-size="12">riesgo</text></g>
 
-                    <!-- Clúster Verde -->
-                    <g filter="url(#network-shadow)">
-                        <circle cx="570" cy="480" r="42" fill="#28965a" />
-                        <text x="570" y="484" text-anchor="middle" fill="white" font-size="13" font-weight="bold">inseguridad</text>
-                    </g>
+                            <!-- Nodos Intermedios/Relacionales (Rosa / Morado Claro) -->
+                            <g transform="translate(600, 300)"><circle r="16" fill="#fbcfe8" /><text class="node-text text-dark-rose" font-size="12">participación</text></g>
+                            <g transform="translate(685, 350)"><circle r="16" fill="#fbcfe8" /><text class="node-text text-dark-rose" font-size="12">reconocimiento</text></g>
+                            <g transform="translate(715, 390)"><circle r="16" fill="#fbcfe8" /><text class="node-text text-dark-rose" font-size="12">edadismo</text></g>
+                            <g transform="translate(635, 425)"><circle r="18" fill="#fbcfe8" /><text class="node-text text-dark-rose" font-size="12">bienestar</text></g>
+                        </g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="70" cy="740" r="38" fill="#28965a" />
-                        <text x="70" y="744" text-anchor="middle" fill="white" font-size="12.5" font-weight="bold">habitantes</text>
-                    </g>
+                        <!-- ==================== NODOS PRINCIPALES ==================== -->
+                        <g id="primary-nodes">
+                            <!-- Nodo Central: Personas mayores -->
+                            <g transform="translate(510, 380)">
+                                <circle r="60" fill="#c06c84" />
+                                <text class="node-text text-white" font-size="20">Personas</text>
+                                <text class="node-text text-white" font-size="20" dy="22">mayores</text>
+                            </g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="290" cy="910" r="32" fill="#28965a" />
-                        <text x="290" y="914" text-anchor="middle" fill="white" font-size="12.5" font-weight="bold">personas</text>
-                    </g>
+                            <!-- Movilidad (Azul) -->
+                            <g transform="translate(490, 180)">
+                                <circle r="45" fill="#3b5998" />
+                                <text class="node-text text-white" font-size="18" >movilidad</text>
+                            </g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="490" cy="860" r="32" fill="#28965a" />
-                        <text x="490" y="864" text-anchor="middle" fill="white" font-size="13" font-weight="bold">basuras</text>
-                    </g>
+                            <!-- Vivienda (Naranja) -->
+                            <g transform="translate(220, 290)">
+                                <circle r="42" fill="#ffa630" />
+                                <text class="node-text text-white" font-size="18">economía</text>
+                            </g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="650" cy="820" r="30" fill="#28965a" />
-                        <text x="650" y="824" text-anchor="middle" fill="white" font-size="13" font-weight="bold">ruido</text>
-                    </g>
+                            <!-- Ambiente (Amarillo) -->
+                            <g transform="translate(180, 530)">
+                                <circle r="40" fill="#fff1b3" />
+                                <text class="node-text text-white" font-size="16">ambiente</text>
+                            </g>
 
-                    <!-- Clúster Morado -->
-                    <g filter="url(#network-shadow)">
-                        <circle cx="800" cy="520" r="42" fill="#8e67b9" />
-                        <text x="800" y="525" text-anchor="middle" fill="white" font-size="15" font-weight="bold">falta</text>
-                    </g>
+                            <!-- Salud (Morado) -->
+                            <g transform="translate(480, 605)">
+                                <circle r="42" fill="#8e67b9" />
+                                <text class="node-text text-white" font-size="18">salud</text>
+                            </g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="780" cy="190" r="40" fill="#8e67b9" />
-                        <text x="780" y="195" text-anchor="middle" fill="white" font-size="14" font-weight="bold">soledad</text>
-                    </g>
+                            <!-- Soledad (Verde) -->
+                            <g transform="translate(780, 560)">
+                                <circle r="42" fill="#72c272" />
+                                <text class="node-text text-white" font-size="18">soledad</text>
+                            </g>
 
-                    <g filter="url(#network-shadow)">
-                        <circle cx="830" cy="880" r="38" fill="#8e67b9" />
-                        <text x="830" y="885" text-anchor="middle" fill="white" font-size="13.5" font-weight="bold">mayores</text>
-                    </g>
-
-                    <g filter="url(#network-shadow)">
-                        <circle cx="940" cy="370" r="34" fill="#8e67b9" />
-                        <text x="940" y="375" text-anchor="middle" fill="white" font-size="13.5" font-weight="bold">salud</text>
-                    </g>
-
-                    <g filter="url(#network-shadow)">
-                        <circle cx="950" cy="730" r="34" fill="#8e67b9" />
-                        <text x="950" y="734" text-anchor="middle" fill="white" font-size="11.5" font-weight="bold">actividades</text>
-                    </g>
-                </svg>
+                            <!-- Seguridad (Turquesa) -->
+                            <g transform="translate(770, 260)">
+                                <circle r="45" fill="#33bfa8" />
+                                <text class="node-text text-white" font-size="18">seguridad</text>
+                            </g>
+                        </g>
+                    </svg>
             </div>
         </div>
 
