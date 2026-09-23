@@ -463,7 +463,7 @@ function renderThematicVisualizations(visualData) {
                 <div class="row chart-header-row g-0 align-items-center d-none d-md-flex">
                     <div class="col-md-3">Tema</div>
                     <div class="col-md-7 text-center">Frecuencia<br><span class="text-muted fw-normal">(n respuestas)</span></div>
-                    <div class="col-md-2 text-end text-primary">Porcentaje<br><span class="text-muted fw-normal" style="font-size:0.75rem;">(sobre 46 respuestas válidas)</span></div>
+                    <div class="col-md-2 text-end text-primary">Porcentaje<br><span class="text-muted fw-normal" style="font-size:0.75rem;">(sobre 53 respuestas válidas)</span></div>
                 </div>
 
                 <div class="chart-rows-container d-flex flex-column gap-3">
@@ -570,7 +570,7 @@ function renderThematicLexicalBlock(lexicalData) {
                         <div class="row g-0 fw-bold text-muted small pb-2 mb-3 border-bottom" style="font-size: 0.8rem;">
                             <div class="col-4">Palabra</div>
                             <div class="col-5 text-center">Frecuencia</div>
-                            <div class="col-3 text-end text-primary">% sobre 46<br>respuestas válidas</div>
+                            <div class="col-3 text-end text-primary">% sobre 53<br>respuestas válidas</div>
                         </div>
 
                         <div class="d-flex flex-column gap-3">
@@ -658,251 +658,222 @@ function renderThematicNetworkBlock(networkData) {
                     </div>
 
                     <div class="border rounded-3 bg-white p-2 position-relative overflow-hidden d-flex justify-content-center align-items-center shadow-sm" style="min-height: 550px;">
-                        <div style="width: 100%; max-width: 900px; margin: 0 auto;">
-                            <svg viewBox="0 0 1000 760" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" style="display: block; width: 100%; height: auto;" xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <filter id="network-shadow" x="-30%" y="-30%" width="160%" height="160%">
-                                        <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity="0.12"/>
-                                    </filter>
-                                </defs>
+                        <svg viewBox="0 0 900 680" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif">
+                            <style>
+                                .node-text {
+                                    font-weight: 600;
+                                    text-anchor: middle;
+                                    dominant-baseline: central;
+                                }
+                                .text-white { fill: #ffffff; }
+                                .text-dark-blue { fill: #1c3b6e; }
+                                .text-dark-green { fill: #1b4b27; }
+                                .text-dark-purple { fill: #3b1b63; }
+                                .text-dark-yellow { fill: #5c4300; }
+                                .text-dark-teal { fill: #0d4b4d; }
+                                .text-dark-orange { fill: #5e2800; }
+                            </style>
 
-                                <!-- ================= ENLACES AL NODO CENTRAL (SOLEDAD) ================= -->
-                                <g stroke-width="1.5" opacity="0.6">
-                                    <line x1="520" y1="360" x2="400" y2="210" stroke="#2b6cb0" />
-                                    <line x1="520" y1="360" x2="620" y2="230" stroke="#319795" />
-                                    <line x1="520" y1="360" x2="760" y2="430" stroke="#ed8936" />
-                                    <line x1="520" y1="360" x2="680" y2="550" stroke="#38a169" />
-                                    <line x1="520" y1="360" x2="445" y2="620" stroke="#ecc94b" />
-                                    <line x1="520" y1="360" x2="258" y2="550" stroke="#805ad5" />
-                                    <line x1="520" y1="360" x2="208" y2="380" stroke="#d53f8c" />
+                            <!-- ==================== LÍNEAS / CONEXIONES ==================== -->
+                            <g id="connections" stroke-linecap="round">
+                                <!-- Conexiones Principales (Desde el nodo central 'atención') -->
+                                <line x1="450" y1="300" x2="330" y2="170" stroke="#2b6cb0" stroke-width="6" /> <!-- a Policía -->
+                                <line x1="450" y1="300" x2="600" y2="170" stroke="#48bb78" stroke-width="6" /> <!-- a Hogares -->
+                                <line x1="450" y1="300" x2="670" y2="360" stroke="#8b5cf6" stroke-width="6" /> <!-- a Educación -->
+                                <line x1="450" y1="300" x2="610" y2="510" stroke="#ecc94b" stroke-width="2.5" /> <!-- a Convivencia -->
+                                <line x1="450" y1="300" x2="400" y2="515" stroke="#319795" stroke-width="3" /> <!-- a Ayuda -->
+                                <line x1="450" y1="300" x2="230" y2="380" stroke="#ed8936" stroke-width="6" /> <!-- a Movilidad -->
+
+                                <!-- Conexiones de 'Policía' -->
+                                <line x1="330" y1="170" x2="365" y2="50" stroke="#63b3ed" stroke-width="2" /> <!-- seguridad -->
+                                <line x1="330" y1="170" x2="235" y2="75" stroke="#63b3ed" stroke-width="2" /> <!-- vigilancia -->
+                                <line x1="330" y1="170" x2="140" y2="145" stroke="#63b3ed" stroke-width="2" /> <!-- control -->
+                                <line x1="330" y1="170" x2="135" y2="235" stroke="#63b3ed" stroke-width="2" /> <!-- autoridades -->
+                                <line x1="330" y1="170" x2="225" y2="265" stroke="#63b3ed" stroke-width="2" /> <!-- ley -->
+
+                                <!-- Conexiones de 'Hogares' -->
+                                <line x1="600" y1="170" x2="570" y2="65" stroke="#81e6d9" stroke-width="2" /> <!-- salud -->
+                                <line x1="600" y1="170" x2="705" y2="75" stroke="#68d391" stroke-width="2" /> <!-- acompañamiento -->
+                                <line x1="600" y1="170" x2="775" y2="150" stroke="#68d391" stroke-width="2" /> <!-- adultos mayores -->
+                                <line x1="600" y1="170" x2="745" y2="235" stroke="#68d391" stroke-width="2" /> <!-- servicios -->
+
+                                <!-- Conexiones de 'Educación' -->
+                                <line x1="670" y1="360" x2="815" y2="295" stroke="#c084fc" stroke-width="2" /> <!-- concientización -->
+                                <line x1="670" y1="360" x2="840" y2="365" stroke="#c084fc" stroke-width="2" /> <!-- participación -->
+                                <line x1="670" y1="360" x2="800" y2="465" stroke="#c084fc" stroke-width="2" /> <!-- comunidad -->
+                                <line x1="670" y1="360" x2="660" y2="465" stroke="#c084fc" stroke-width="2" /> <!-- inclusión -->
+
+                                <!-- Conexiones de 'Ruido' (vía Convivencia) -->
+                                <line x1="610" y1="510" x2="670" y2="570" stroke="#ecc94b" stroke-width="3" /> <!-- a Ruido -->
+                                <line x1="670" y1="570" x2="750" y2="525" stroke="#f6ad55" stroke-width="2" /> <!-- normas -->
+                                <line x1="670" y1="570" x2="775" y2="630" stroke="#f6ad55" stroke-width="2" /> <!-- control -->
+
+                                <!-- Conexiones de 'Ayuda' -->
+                                <line x1="400" y1="515" x2="305" y2="575" stroke="#4fd1c5" stroke-width="2" /> <!-- recursos -->
+                                <line x1="400" y1="515" x2="395" y2="630" stroke="#4fd1c5" stroke-width="2" /> <!-- económico -->
+                                <line x1="400" y1="515" x2="510" y2="565" stroke="#4fd1c5" stroke-width="2" /> <!-- apoyo -->
+
+                                <!-- Conexiones de 'Movilidad' -->
+                                <line x1="230" y1="380" x2="105" y2="310" stroke="#fbd38d" stroke-width="2" /> <!-- rampas -->
+                                <line x1="230" y1="380" x2="50" y2="395" stroke="#fbd38d" stroke-width="2" /> <!-- espacio público -->
+                                <line x1="230" y1="380" x2="90" y2="480" stroke="#fbd38d" stroke-width="2" /> <!-- accesibilidad -->
+                                <line x1="230" y1="380" x2="235" y2="515" stroke="#fbd38d" stroke-width="2" /> <!-- infraestructura -->
+                            </g>
+
+                            <!-- ==================== NODOS PERIFÉRICOS (SECUNDARIOS) ==================== -->
+                            <g id="secondary-nodes">
+                                <!-- Rama Policía (Azul claro) -->
+                                <g transform="translate(365, 50)">
+                                    <circle r="32" fill="#bee3f8" />
+                                    <text class="node-text text-dark-blue" font-size="12">seguridad</text>
+                                </g>
+                                <g transform="translate(235, 75)">
+                                    <circle r="30" fill="#bee3f8" />
+                                    <text class="node-text text-dark-blue" font-size="12">vigilancia</text>
+                                </g>
+                                <g transform="translate(140, 145)">
+                                    <circle r="28" fill="#c3ddfd" />
+                                    <text class="node-text text-dark-blue" font-size="12">control</text>
+                                </g>
+                                <g transform="translate(135, 235)">
+                                    <circle r="32" fill="#c3ddfd" />
+                                    <text class="node-text text-dark-blue" font-size="12">autoridades</text>
+                                </g>
+                                <g transform="translate(225, 265)">
+                                    <circle r="25" fill="#c3ddfd" />
+                                    <text class="node-text text-dark-blue" font-size="12">ley</text>
                                 </g>
 
-                                <!-- ================= CONEXIONES SECUNDARIAS / INTERNAS ================= -->
-                                <g stroke-width="1.2" opacity="0.4">
-                                    <!-- Espacio Público -->
-                                    <line x1="400" y1="210" x2="335" y2="100" stroke="#2b6cb0" />
-                                    <line x1="400" y1="210" x2="310" y2="195" stroke="#2b6cb0" />
-                                    <line x1="400" y1="210" x2="335" y2="285" stroke="#2b6cb0" />
-                                    <line x1="400" y1="210" x2="420" y2="80" stroke="#2b6cb0" />
-                                    <line x1="400" y1="210" x2="480" y2="150" stroke="#2b6cb0" />
-                                    <line x1="335" y1="100" x2="310" y2="195" stroke="#2b6cb0" />
-                                    <line x1="335" y1="100" x2="420" y2="80" stroke="#2b6cb0" />
-
-                                    <!-- Seguridad -->
-                                    <line x1="620" y1="230" x2="585" y2="70" stroke="#319795" />
-                                    <line x1="620" y1="230" x2="685" y2="90" stroke="#319795" />
-                                    <line x1="620" y1="230" x2="720" y2="175" stroke="#319795" />
-                                    <line x1="620" y1="230" x2="725" y2="265" stroke="#319795" />
-
-                                    <!-- Economía -->
-                                    <line x1="760" y1="430" x2="705" y2="355" stroke="#ed8936" />
-                                    <line x1="760" y1="430" x2="808" y2="295" stroke="#ed8936" />
-                                    <line x1="760" y1="430" x2="838" y2="365" stroke="#ed8936" />
-                                    <line x1="760" y1="430" x2="830" y2="475" stroke="#ed8936" />
-                                    <line x1="760" y1="430" x2="805" y2="550" stroke="#ed8936" />
-
-                                    <!-- Familias -->
-                                    <line x1="680" y1="550" x2="695" y2="465" stroke="#38a169" />
-                                    <line x1="680" y1="550" x2="790" y2="510" stroke="#38a169" />
-                                    <line x1="680" y1="550" x2="785" y2="600" stroke="#38a169" />
-                                    <line x1="680" y1="550" x2="775" y2="660" stroke="#38a169" />
-                                    <line x1="680" y1="550" x2="650" y2="670" stroke="#38a169" />
-
-                                    <!-- Cultura -->
-                                    <line x1="445" y1="620" x2="515" y2="555" stroke="#ecc94b" />
-                                    <line x1="445" y1="620" x2="535" y2="655" stroke="#ecc94b" />
-                                    <line x1="445" y1="620" x2="420" y2="700" stroke="#ecc94b" />
-                                    <line x1="445" y1="620" x2="345" y2="665" stroke="#ecc94b" />
-
-                                    <!-- Salud -->
-                                    <line x1="258" y1="550" x2="168" y2="490" stroke="#805ad5" />
-                                    <line x1="258" y1="550" x2="162" y2="590" stroke="#805ad5" />
-                                    <line x1="258" y1="550" x2="200" y2="655" stroke="#805ad5" />
-                                    <line x1="258" y1="550" x2="250" y2="665" stroke="#805ad5" />
-                                    <line x1="258" y1="550" x2="318" y2="600" stroke="#805ad5" stroke-dasharray="3,3" />
-
-                                    <!-- Instituciones -->
-                                    <line x1="208" y1="380" x2="172" y2="225" stroke="#d53f8c" />
-                                    <line x1="208" y1="380" x2="142" y2="320" stroke="#d53f8c" />
-                                    <line x1="208" y1="380" x2="125" y2="400" stroke="#d53f8c" />
-                                    <line x1="208" y1="380" x2="125" y2="495" stroke="#d53f8c" />
-                                    <line x1="208" y1="380" x2="228" y2="520" stroke="#d53f8c" stroke-dasharray="3,3" />
-                                    <line x1="208" y1="380" x2="285" y2="300" stroke="#d53f8c" />
+                                <!-- Rama Hogares (Verde claro) -->
+                                <g transform="translate(570, 65)">
+                                    <circle r="26" fill="#c6f6d5" />
+                                    <text class="node-text text-dark-green" font-size="12">salud</text>
+                                </g>
+                                <g transform="translate(705, 75)">
+                                    <circle r="38" fill="#d4f7dc" />
+                                    <text class="node-text text-dark-green" font-size="12">acompañamiento</text>
+                                </g>
+                                <g transform="translate(775, 150)">
+                                    <circle r="34" fill="#d4f7dc" />
+                                    <text class="node-text text-dark-green" font-size="11">adultos</text>
+                                    <text class="node-text text-dark-green" font-size="11" dy="13">mayores</text>
+                                </g>
+                                <g transform="translate(745, 235)">
+                                    <circle r="30" fill="#d4f7dc" />
+                                    <text class="node-text text-dark-green" font-size="12">servicios</text>
                                 </g>
 
-                                <!-- Interconexiones entre grupos secundarios -->
-                                <g stroke="#cbd5e0" stroke-width="1" opacity="0.5">
-                                    <line x1="500" y1="268" x2="620" y2="230" />
-                                    <line x1="285" y1="300" x2="400" y2="210" />
+                                <!-- Rama Educación (Morado claro) -->
+                                <g transform="translate(815, 295)">
+                                    <circle r="34" fill="#e9d8fd" />
+                                    <text class="node-text text-dark-purple" font-size="11">concientización</text>
+                                </g>
+                                <g transform="translate(840, 365)">
+                                    <circle r="32" fill="#e9d8fd" />
+                                    <text class="node-text text-dark-purple" font-size="11">participación</text>
+                                </g>
+                                <g transform="translate(800, 465)">
+                                    <circle r="30" fill="#e9d8fd" />
+                                    <text class="node-text text-dark-purple" font-size="12">comunidad</text>
+                                </g>
+                                <g transform="translate(660, 465)">
+                                    <circle r="28" fill="#e9d8fd" />
+                                    <text class="node-text text-dark-purple" font-size="12">inclusión</text>
                                 </g>
 
-                                <!-- ================= NODOS PRINCIPALES ================= -->
-                                <g filter="url(#network-shadow)">
-                                    <circle cx="520" cy="360" r="55" fill="#6b46c1" />
-                                    <text x="520" y="367" text-anchor="middle" fill="white" font-size="20" font-weight="bold">soledad</text>
+                                <!-- Rama Convivencia y Ruido (Amarillo / Naranja claro) -->
+                                <g transform="translate(610, 510)">
+                                    <circle r="35" fill="#fefcbf" />
+                                    <text class="node-text text-dark-yellow" font-size="12">convivencia</text>
+                                </g>
+                                <g transform="translate(750, 525)">
+                                    <circle r="28" fill="#fefcbf" />
+                                    <text class="node-text text-dark-yellow" font-size="12">normas</text>
+                                </g>
+                                <g transform="translate(775, 630)">
+                                    <circle r="28" fill="#fefcbf" />
+                                    <text class="node-text text-dark-yellow" font-size="12">control</text>
                                 </g>
 
-                                <g filter="url(#network-shadow)">
-                                    <circle cx="400" cy="210" r="42" fill="#2b6cb0" />
-                                    <text x="400" y="206" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Espacio</text>
-                                    <text x="400" y="221" text-anchor="middle" fill="white" font-size="13" font-weight="bold">público</text>
+                                <!-- Rama Ayuda (Turquesa claro) -->
+                                <g transform="translate(305, 575)">
+                                    <circle r="30" fill="#b2f5ea" />
+                                    <text class="node-text text-dark-teal" font-size="12">recursos</text>
+                                </g>
+                                <g transform="translate(395, 630)">
+                                    <circle r="30" fill="#b2f5ea" />
+                                    <text class="node-text text-dark-teal" font-size="12">económico</text>
+                                </g>
+                                <g transform="translate(510, 565)">
+                                    <circle r="28" fill="#e6fffa" />
+                                    <text class="node-text text-dark-teal" font-size="12">apoyo</text>
                                 </g>
 
-                                <g filter="url(#network-shadow)">
-                                    <circle cx="620" cy="230" r="40" fill="#319795" />
-                                    <text x="620" y="235" text-anchor="middle" fill="white" font-size="13" font-weight="bold">Seguridad</text>
+                                <!-- Rama Movilidad (Naranja suave) -->
+                                <g transform="translate(105, 310)">
+                                    <circle r="26" fill="#feebc8" />
+                                    <text class="node-text text-dark-orange" font-size="12">rampas</text>
+                                </g>
+                                <g transform="translate(50, 395)">
+                                    <circle r="34" fill="#feebc8" />
+                                    <text class="node-text text-dark-orange" font-size="12">espacio</text>
+                                    <text class="node-text text-dark-orange" font-size="12" dy="13">público</text>
+                                </g>
+                                <g transform="translate(90, 480)">
+                                    <circle r="34" fill="#feebc8" />
+                                    <text class="node-text text-dark-orange" font-size="12">accesibilidad</text>
+                                </g>
+                                <g transform="translate(235, 515)">
+                                    <circle r="35" fill="#feebc8" />
+                                    <text class="node-text text-dark-orange" font-size="11">infraestructura</text>
+                                </g>
+                            </g>
+
+                            <!-- ==================== NODOS PRINCIPALES (PRIMARIOS) ==================== -->
+                            <g id="primary-nodes">
+                                <!-- Nodo Central: atención -->
+                                <g transform="translate(450, 300)">
+                                    <circle r="60" fill="#2b6cb0" />
+                                    <text class="node-text text-white" font-size="22">atención</text>
                                 </g>
 
-                                <g filter="url(#network-shadow)">
-                                    <circle cx="760" cy="430" r="39" fill="#ed8936" />
-                                    <text x="760" y="435" text-anchor="middle" fill="white" font-size="13" font-weight="bold">economía</text>
+                                <!-- Nodo: policía -->
+                                <g transform="translate(330, 170)">
+                                    <circle r="52" fill="#2b6cb0" />
+                                    <text class="node-text text-white" font-size="20">policía</text>
                                 </g>
 
-                                <g filter="url(#network-shadow)">
-                                    <circle cx="680" cy="550" r="41" fill="#38a169" />
-                                    <text x="680" y="555" text-anchor="middle" fill="white" font-size="14" font-weight="bold">Familias</text>
+                                <!-- Nodo: hogares -->
+                                <g transform="translate(600, 170)">
+                                    <circle r="52" fill="#48bb78" />
+                                    <text class="node-text text-white" font-size="20">hogares</text>
                                 </g>
 
-                                <g filter="url(#network-shadow)">
-                                    <circle cx="445" cy="620" r="37" fill="#ecc94b" />
-                                    <text x="445" y="625" text-anchor="middle" fill="#2d3748" font-size="14" font-weight="bold">cultura</text>
+                                <!-- Nodo: educación -->
+                                <g transform="translate(670, 360)">
+                                    <circle r="50" fill="#8b5cf6" />
+                                    <text class="node-text text-white" font-size="19">educación</text>
                                 </g>
 
-                                <g filter="url(#network-shadow)">
-                                    <circle cx="258" cy="550" r="38" fill="#805ad5" />
-                                    <text x="258" y="555" text-anchor="middle" fill="white" font-size="14" font-weight="bold">salud</text>
+                                <!-- Nodo: ruido -->
+                                <g transform="translate(670, 570)">
+                                    <circle r="42" fill="#ecc94b" />
+                                    <text class="node-text text-white" font-size="18">ruido</text>
                                 </g>
 
-                                <g filter="url(#network-shadow)">
-                                    <circle cx="208" cy="380" r="40" fill="#d53f8c" />
-                                    <text x="208" y="384" text-anchor="middle" fill="white" font-size="12" font-weight="bold">Instituciones</text>
+                                <!-- Nodo: ayuda -->
+                                <g transform="translate(400, 515)">
+                                    <circle r="44" fill="#319795" />
+                                    <text class="node-text text-white" font-size="19">ayuda</text>
                                 </g>
 
-                                <!-- ================= NODOS PERIFÉRICOS ================= -->
-                                <!-- Espacio Público -->
-                                <g fill="#2b6cb0" font-size="11" font-weight="500">
-                                    <circle cx="335" cy="100" r="14" />
-                                    <text x="320" y="75">aceras</text>
-
-                                    <circle cx="310" cy="195" r="13" />
-                                    <text x="260" y="185">barrio</text>
-
-                                    <circle cx="335" cy="285" r="13" />
-                                    <text x="290" y="308">sector</text>
-
-                                    <circle cx="420" cy="80" r="14" />
-                                    <text x="440" y="65">movilidad</text>
-
-                                    <circle cx="480" cy="150" r="13" />
-                                    <text x="498" y="140">móviles</text>
-
-                                    <circle cx="500" cy="268" r="12" />
+                                <!-- Nodo: movilidad -->
+                                <g transform="translate(230, 380)">
+                                    <circle r="55" fill="#ed8936" />
+                                    <text class="node-text text-white" font-size="20">movilidad</text>
                                 </g>
-
-                                <!-- Seguridad -->
-                                <g fill="#319795" font-size="11" font-weight="500">
-                                    <circle cx="585" cy="70" r="12" />
-                                    <text x="605" y="60">control</text>
-
-                                    <circle cx="685" cy="90" r="12" />
-                                    <text x="705" y="80">vigilancia</text>
-
-                                    <circle cx="720" cy="175" r="12" />
-                                    <text x="738" y="170">policía</text>
-
-                                    <circle cx="725" cy="265" r="12" />
-                                    <text x="745" y="265">riesgo</text>
-                                </g>
-
-                                <!-- Economía -->
-                                <g fill="#ed8936" font-size="11" font-weight="500">
-                                    <circle cx="705" cy="355" r="13" />
-                                    <text x="722" y="345">costos</text>
-
-                                    <circle cx="808" cy="295" r="12" />
-                                    <text x="825" y="285">costos</text>
-
-                                    <circle cx="838" cy="365" r="13" />
-                                    <text x="855" y="360">vivienda</text>
-
-                                    <circle cx="830" cy="475" r="12" />
-                                    <text x="848" y="468">gentrificación</text>
-
-                                    <circle cx="805" cy="550" r="13" />
-                                    <text x="822" y="555">servicios</text>
-                                </g>
-
-                                <!-- Familias -->
-                                <g fill="#38a169" font-size="11" font-weight="500">
-                                    <circle cx="695" cy="465" r="11" />
-                                    <text x="712" y="455">apoyo</text>
-
-                                    <circle cx="790" cy="510" r="13" />
-                                    <text x="808" y="505">acompañamiento</text>
-
-                                    <circle cx="785" cy="600" r="12" />
-                                    <text x="802" y="600">viven</text>
-
-                                    <circle cx="775" cy="660" r="13" />
-                                    <text x="792" y="668">Demografía</text>
-
-                                    <circle cx="650" cy="670" r="12" />
-                                    <text x="668" y="690">tiempo</text>
-                                </g>
-
-                                <!-- Cultura -->
-                                <g fill="#d69e2e" font-size="11" font-weight="500">
-                                    <circle cx="515" cy="555" r="13" fill="#ecc94b" />
-                                    <text x="535" y="550">empatía</text>
-
-                                    <circle cx="535" cy="655" r="12" fill="#ecc94b" />
-                                    <text x="552" y="660">reconocimiento</text>
-
-                                    <circle cx="420" cy="700" r="12" fill="#ecc94b" />
-                                    <text x="440" y="715">ciudadanía</text>
-
-                                    <circle cx="345" cy="665" r="12" fill="#ecc94b" />
-                                    <text x="285" y="685">respeto</text>
-                                </g>
-
-                                <!-- Salud -->
-                                <g fill="#805ad5" font-size="11" font-weight="500">
-                                    <circle cx="168" cy="490" r="13" />
-                                    <text x="108" y="485">cuidado</text>
-
-                                    <circle cx="162" cy="590" r="12" />
-                                    <text x="98" y="595">Atención</text>
-
-                                    <circle cx="200" cy="655" r="13" />
-                                    <text x="130" y="680">Cuidadorar</text>
-
-                                    <circle cx="250" cy="665" r="12" />
-                                    <text x="235" y="700">Capacitación</text>
-
-                                    <circle cx="318" cy="600" r="12" />
-                                    <text x="335" y="615">bienestar</text>
-                                </g>
-
-                                <!-- Instituciones -->
-                                <g fill="#d53f8c" font-size="11" font-weight="500">
-                                    <circle cx="172" cy="225" r="13" />
-                                    <text x="100" y="210">Planificación</text>
-
-                                    <circle cx="142" cy="320" r="12" />
-                                    <text x="48" y="310">Participación</text>
-
-                                    <circle cx="125" cy="400" r="12" />
-                                    <text x="32" y="390">Información</text>
-
-                                    <circle cx="125" cy="495" r="13" />
-                                    <text x="65" y="500">control</text>
-
-                                    <circle cx="228" cy="520" r="14" />
-                                    <text x="248" y="535">Gestión</text>
-                                </g>
-                            </svg>
-                        
-                        </div>
+                            </g>
+                        </svg>
                     </div>
                 </div>
 

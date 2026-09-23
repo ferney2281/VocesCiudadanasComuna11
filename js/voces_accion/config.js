@@ -2,7 +2,7 @@ const SITE_DATA1 = {
     // Configuración del Menú de navegación superior con iconos asignados
     // Textos del Banner Principal
     hero: {
-        title: "Pregunta 3",
+        title: "Voces en Acción",
         subtitle: " ¿Qué soluciones propone a los problemas que afectan el bienestar y cuidado de los adultos mayores en la comuna 11 (Laureles-Estadio)?"
     },
   
@@ -10,8 +10,8 @@ const SITE_DATA1 = {
         { id: "index", label: "General", icon: "fas fa-home", active: false, url:"../index.html" },
         { id: "pregunta1", label: "Pregunta 1", icon: "fas fa-user-friends", active: false, url:"pregunta1.html" },
         { id: "pregunta2", label: "Pregunta 2", icon: "fas fa-heartbeat", active: false, url:"pregunta2.html" },
-        { id: "pregunta3", label: "Pregunta 3", icon: "fas fa-users", active: true, url:"pregunta3.html" },
-        { id: "voces_accion", label: "Voces en acción", icon: "fas fa-bullhorn", active: false, url: "voces_accion.html" },
+        { id: "pregunta3", label: "Pregunta 3", icon: "fas fa-users", active: false, url:"pregunta3.html" },
+        { id: "voces_accion", label: "Voces en acción", icon: "fas fa-bullhorn", active: true, url: "voces_accion.html" },
     ],
     // NUEVO: Métricas del RESUMEN GENERAL para la Pregunta 2
     summaryMetrics: [
