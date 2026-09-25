@@ -17,13 +17,13 @@ const SITE_DATA1 = {
     summaryMetrics: [
         {
             label: "Respuestas analizadas",
-            value: 29,
+            value: 34,
             icon: "fas fa-users-cog",
             colorClass: "metric-purple"
         },
         {
             label: "Respuestas válidas",
-            value: 27,
+            value: 32,
             icon: "fas fa-check-circle",
             colorClass: "metric-green"
         },
@@ -35,19 +35,19 @@ const SITE_DATA1 = {
         },
         {
             label: "Temas encontrados",
-            value: 6,
+            value: 8,
             icon: "fas fa-folder-open",
             colorClass: "metric-blue"
         },
         {
             label: "Subtemas identificados",
-            value: 27,
+            value: 42,
             icon: "fas fa-sitemap",
             colorClass: "metric-pink"
         },
         {
             label: "Palabras únicas",
-            value: 169,
+            value: 204,
             icon: "fas fa-sitemap",
             colorClass: "metric-pink",
             helpText: "Número de términos distintos identificados después del proceso de limpieza y normalización del texto."
@@ -59,54 +59,54 @@ const SITE_DATA1 = {
     thematicAnalysis: {
 
         //RESUMEN ANALÍTICO
-            summaryAnalyticalBlock: {
+        summaryAnalyticalBlock: {
             title: "Resumen analítico",
-            subtitle: "Síntesis de los principales hallazgos del análisis temático y léxico de las 27 respuestas válidas.",
+            subtitle: "Síntesis de los principales hallazgos del análisis temático y léxico de las 32 respuestas válidas.",
             interpretationTitle: "Interpretación general",
-            interpretationText: "Las propuestas de solución se concentran principalmente en fortalecer la gestión institucional, el control y el cumplimiento de las normas, junto con una mayor oferta de servicios y espacios de atención para las personas mayores. También adquieren especial relevancia la seguridad, la vigilancia, el mejoramiento del espacio público y la accesibilidad. De manera transversal aparecen propuestas orientadas a la educación, sensibilización, participación comunitaria y generación de redes de apoyo. En conjunto, las respuestas muestran que los participantes no identifican una única solución, sino la necesidad de una intervención articulada entre autoridades, comunidad, servicios sociales, infraestructura y acciones de inclusión.",
-            footnote: "Los porcentajes se calculan sobre las 27 respuestas válidas. Una misma respuesta puede estar asociada a más de un tema.",
+            interpretationText: "Las soluciones propuestas se concentran principalmente en el fortalecimiento de la institucionalidad, el control y las políticas públicas, seguidas por acciones de participación comunitaria, acompañamiento y recuperación del espacio público. También adquieren relevancia la educación, la sensibilización, la divulgación de información y el fortalecimiento de los servicios de salud y cuidado. En conjunto, las respuestas muestran que las soluciones planteadas requieren una combinación de acciones institucionales, comunitarias, educativas, ambientales y de atención directa a las personas mayores.",
+            footnote: "Los porcentajes se calculan sobre las 32 respuestas válidas. Una misma respuesta puede estar asociada a más de un tema.",
             cards: [
                 {
                     type: "theme",
                     badge: "Tema más frecuente",
-                    title: "Gestión institucional, autoridad y cumplimiento",
-                    value: "10",
+                    title: "Institucionalidad, control y políticas públicas",
+                    value: "13",
                     unit: "respuestas",
-                    percentage: "37,0 %",
-                    subtext: "Frecuencia sobre 27 respuestas válidas",
+                    percentage: "40,6 %",
+                    subtext: "Frecuencia sobre 32 respuestas válidas",
                     icon: "fas fa-landmark",
                     bgClass: "bg-primary-subtle text-primary"
                 },
                 {
                     type: "theme",
                     badge: "Segundo tema más frecuente",
-                    title: "Servicios, cuidado y atención al adulto mayor",
-                    value: "8",
+                    title: "Participación comunitaria, acompañamiento y redes sociales",
+                    value: "10",
                     unit: "respuestas",
-                    percentage: "29,6 %",
-                    subtext: "Frecuencia sobre 27 respuestas válidas",
+                    percentage: "31,3 %",
+                    subtext: "Frecuencia sobre 32 respuestas válidas",
                     icon: "fas fa-hands-helping",
                     bgClass: "bg-success-subtle text-success"
                 },
                 {
                     type: "theme",
                     badge: "Tercer tema más frecuente",
-                    title: "Seguridad, vigilancia y convivencia",
-                    value: "7",
+                    title: "Espacio público, movilidad y ambiente",
+                    value: "10",
                     unit: "respuestas",
-                    percentage: "25,9 %",
-                    subtext: "Frecuencia sobre 27 respuestas válidas",
-                    icon: "fas fa-shield-alt",
+                    percentage: "31,3 %",
+                    subtext: "Frecuencia sobre 32 respuestas válidas",
+                    icon: "fas fa-road",
                     bgClass: "bg-info-subtle text-info"
                 },
                 {
                     type: "lexical",
                     badge: "Palabra más frecuente",
-                    title: "atención / policía",
-                    value: "3",
-                    unit: "respuestas",
-                    percentage: "11,1 %",
-                    subtext: "Ambos términos presentan la mayor presencia entre los conceptos sustantivos recurrentes. También destacan 'hogares', 'ayuda', 'seguridad', 'ruido' y 'concientización'. Frecuencia sobre 27 respuestas válidas.",
+                    title: "mayor",
+                    value: "6",
+                    unit: "menciones",
+                    percentage: "18,8 %",
+                    subtext: "Frecuencia sobre 32 respuestas válidas",
                     icon: "font-weight: bold; font-family: sans-serif;",
                     isTextIcon: true,
                     bgClass: "bg-purple-subtle text-purple"
@@ -114,15 +114,15 @@ const SITE_DATA1 = {
                 {
                     type: "relation",
                     badge: "Relación más fuerte",
-                    title: "policía ↔ vigilancia<br><br>hogares ↔ adultos mayores",
-                    description: "Las coocurrencias muestran dos líneas de asociación particularmente claras: <strong>policía → vigilancia</strong>, relacionada con la demanda de mayor control y seguridad, y <strong>hogares → adultos mayores</strong>, vinculada con la necesidad de ampliar espacios y servicios de atención.",
+                    title: "adulto ↔ mayor",
+                    description: "Es la coocurrencia más frecuente identificada en el corpus de soluciones, con 6 apariciones conjuntas después de la normalización léxica.",
                     icon: "fas fa-link",
                     bgClass: "bg-warning-subtle text-warning"
                 },
                 {
                     type: "corpus",
                     badge: "Corpus analizado",
-                    value: "169",
+                    value: "204",
                     unit: "palabras únicas",
                     description: "Términos distintos identificados después del proceso de limpieza y normalización del texto.",
                     icon: "fas fa-file-alt",
@@ -133,47 +133,59 @@ const SITE_DATA1 = {
         //distribución de temas identificados
         visualizations: {
             title: "Distribución de temas identificados",
-            subtitle: "El análisis temático permitió identificar seis temas principales en las respuestas abiertas. Cada respuesta puede estar asociada a más de un tema, por lo que los porcentajes no suman 100 %.",
+            subtitle: "El análisis temático permitió identificar ocho temas principales en las respuestas sobre soluciones. Cada respuesta puede estar asociada a más de un tema, por lo que los porcentajes no suman 100 %.",
             infoBox: "La frecuencia indica el número de respuestas en las que aparece cada tema.",
             footnote: "Una misma respuesta puede pertenecer a más de un tema.",
-            interpretation: "Las propuestas se concentran principalmente en acciones institucionales y de cumplimiento de las normas, seguidas por la ampliación de servicios y espacios para los adultos mayores. También sobresalen las demandas de mayor seguridad y vigilancia. En un segundo nivel aparecen las mejoras de accesibilidad y espacio público, así como las estrategias de educación, sensibilización y fortalecimiento comunitario. Esto evidencia una percepción de que el bienestar de las personas mayores requiere respuestas coordinadas entre gobierno, comunidad y servicios especializados.",
-            maxResponses: 27,
+            interpretation: "Las soluciones propuestas se orientan principalmente hacia el fortalecimiento de la institucionalidad y el control, seguido por la participación comunitaria y las acciones sobre el espacio público. También se observa una presencia importante de propuestas educativas, de divulgación y de fortalecimiento de los servicios de salud y cuidado.",
+            maxResponses: 13,
             items: [
                 {
                     icon: "fas fa-landmark",
-                    theme: "Gestión institucional, autoridad y cumplimiento",
-                    count: 10,
-                    percentage: "37,0 %"
+                    theme: "Institucionalidad, control y políticas públicas",
+                    count: 13,
+                    percentage: "40,6 %"
                 },
                 {
                     icon: "fas fa-hands-helping",
-                    theme: "Servicios, cuidado y atención al adulto mayor",
+                    theme: "Participación comunitaria, acompañamiento y redes sociales",
+                    count: 10,
+                    percentage: "31,3 %"
+                },
+                {
+                    icon: "fas fa-road",
+                    theme: "Espacio público, movilidad y ambiente",
+                    count: 10,
+                    percentage: "31,3 %"
+                },
+                {
+                    icon: "fas fa-graduation-cap",
+                    theme: "Educación, sensibilización e información",
+                    count: 9,
+                    percentage: "28,1 %"
+                },
+                {
+                    icon: "fas fa-heart",
+                    theme: "Salud, cuidado y servicios de apoyo",
                     count: 8,
-                    percentage: "29,6 %"
+                    percentage: "25,0 %"
+                },
+                {
+                    icon: "fas fa-home",
+                    theme: "Vivienda, centros y ciudad amigable con las personas mayores",
+                    count: 5,
+                    percentage: "15,6 %"
                 },
                 {
                     icon: "fas fa-shield-alt",
-                    theme: "Seguridad, vigilancia y convivencia",
-                    count: 7,
-                    percentage: "25,9 %"
+                    theme: "Seguridad y protección",
+                    count: 4,
+                    percentage: "12,5 %"
                 },
                 {
-                    icon: "fas fa-universal-access",
-                    theme: "Movilidad, accesibilidad y espacio público",
-                    count: 5,
-                    percentage: "18,5 %"
-                },
-                {
-                    icon: "fas fa-users",
-                    theme: "Inclusión, educación y redes comunitarias",
-                    count: 5,
-                    percentage: "18,5 %"
-                },
-                {
-                    icon: "fas fa-hand-holding-usd",
-                    theme: "Apoyo económico y distribución de recursos",
+                    icon: "fas fa-coins",
+                    theme: "Economía, recursos y equidad",
                     count: 3,
-                    percentage: "11,1 %"
+                    percentage: "9,4 %"
                 }
             ]
         },
@@ -181,59 +193,95 @@ const SITE_DATA1 = {
         //ANÁLISIS LÉXICO: Palabras más frecuentes, nube de palabras
         lexicalBlock: {
             title: "Análisis léxico",
-            description: "El análisis del vocabulario permite identificar los términos y conceptos con mayor presencia en las respuestas. Se realizó limpieza, normalización y exclusión de palabras funcionales o poco informativas para destacar el contenido sustantivo de las propuestas.",
-            footnote: "La frecuencia corresponde al número de respuestas válidas en las que aparece cada término o concepto. Se excluyeron palabras vacías, conectores y términos de escaso valor interpretativo.",
+            description: "El análisis del vocabulario permite identificar los términos más utilizados al proponer soluciones para los problemas que afectan el bienestar y cuidado de las personas mayores. La frecuencia permite observar los conceptos que aparecen con mayor recurrencia dentro del corpus de soluciones.",
+            footnote: "La frecuencia corresponde al número de apariciones de cada término en las 32 respuestas válidas. Se excluyeron palabras vacías, conectores y términos sin valor analítico.",
+
             frequentWords: {
                 maxMentions: 30,
                 items: [
-                    { word: "atención", count: 3, percentage: "11,1 %" },
-                    { word: "policía", count: 3, percentage: "11,1 %" },
-                    { word: "hogares", count: 2, percentage: "7,4 %" },
-                    { word: "ayuda", count: 3, percentage: "11,1 %" },
-                    { word: "seguridad", count: 3, percentage: "11,1 %" },
-                    { word: "ruido", count: 2, percentage: "7,4 %" },
-                    { word: "vigilancia", count: 2, percentage: "7,4 %" },
-                    { word: "concientización", count: 2, percentage: "7,4 %" },
-                    { word: "educación", count: 2, percentage: "7,4 %" },
-                    { word: "mejorar", count: 2, percentage: "7,4 %" }
+                    { word: "mayor", count: 6, percentage: "18,8 %" },
+                    { word: "soledad", count: 5, percentage: "15,6 %" },
+                    { word: "adulto", count: 4, percentage: "12,5 %" },
+                    { word: "programas", count: 4, percentage: "12,5 %" },
+                    { word: "atención", count: 4, percentage: "12,5 %" },
+                    { word: "personas", count: 4, percentage: "12,5 %" },
+                    { word: "autoridades", count: 4, percentage: "12,5 %" },
+                    { word: "adultos", count: 4, percentage: "12,5 %" },
+                    { word: "policía", count: 3, percentage: "9,4 %" },
+                    { word: "mejorar", count: 3, percentage: "9,4 %" },
+                    { word: "control", count: 2, percentage: "6,3 %" },
+                    { word: "espacio", count: 2, percentage: "6,3 %" },
+                    { word: "público", count: 2, percentage: "6,3 %" },
+                    { word: "ruido", count: 2, percentage: "6,3 %" },
+                    { word: "divulgación", count: 2, percentage: "6,3 %" },
+                    { word: "cámaras", count: 2, percentage: "6,3 %" },
+                    { word: "vigilancia", count: 2, percentage: "6,3 %" },
+                    { word: "concientizar", count: 2, percentage: "6,3 %" },
+                    { word: "lugares", count: 2, percentage: "6,3 %" },
+                    { word: "hogares", count: 2, percentage: "6,3 %" }
                 ]
-            }, // Se cerró frequentWords correctamente con una coma para continuar
+            },
 
-            // Nube de palabras metida DENTRO de lexicalBlock
-             wordCloud: [
-                { text: "atención", size: "2.4rem", color: "#6f42c1", weight: "bold" },
-                { text: "policía", size: "2.3rem", color: "#198754", weight: "bold" },
-                { text: "seguridad", size: "2.0rem", color: "#198754", weight: "bold" },
-                { text: "ayuda", size: "1.8rem", color: "#0d6efd", weight: "600" },
-                { text: "hogares", size: "1.7rem", color: "#6f42c1", weight: "600" },
-                { text: "vigilancia", size: "1.5rem", color: "#198754", weight: "normal" },
-                { text: "ruido", size: "1.4rem", color: "#495057", weight: "normal" },
-                { text: "educación", size: "1.3rem", color: "#6f42c1", weight: "normal" },
-                { text: "concientización", size: "1.3rem", color: "#20c997", weight: "normal" },
-                { text: "salud", size: "1.2rem", color: "#0d6efd", weight: "normal" },
-                { text: "acompañamiento", size: "1.1rem", color: "#6f42c1", weight: "normal" },
-                { text: "programas", size: "1.1rem", color: "#0d6efd", weight: "normal" },
-                { text: "participación", size: "1.0rem", color: "#20c997", weight: "normal" },
-                { text: "rampas", size: "1.0rem", color: "#495057", weight: "normal" }
+            wordCloud: [
+                { text: "adulto mayor", size: "2.6rem", color: "#6f42c1", weight: "bold" },
+                { text: "soledad", size: "2.1rem", color: "#72c272", weight: "bold" },
+                { text: "programas", size: "1.7rem", color: "#c06c84", weight: "600" },
+                { text: "atención", size: "1.6rem", color: "#8e67b9", weight: "600" },
+                { text: "autoridades", size: "1.5rem", color: "#c06c84", weight: "normal" },
+                { text: "personas", size: "1.4rem", color: "#72c272", weight: "normal" },
+                { text: "policía", size: "1.3rem", color: "#33bfa8", weight: "normal" },
+                { text: "control", size: "1.2rem", color: "#3b5998", weight: "normal" },
+                { text: "espacio público", size: "1.2rem", color: "#3b5998", weight: "normal" },
+                { text: "ruido", size: "1.1rem", color: "#3b5998", weight: "normal" },
+                { text: "divulgación", size: "1.1rem", color: "#ffa630", weight: "normal" },
+                { text: "cámaras", size: "1.0rem", color: "#33bfa8", weight: "normal" },
+                { text: "vigilancia", size: "1.0rem", color: "#33bfa8", weight: "normal" },
+                { text: "hogares", size: "1.0rem", color: "#8e67b9", weight: "normal" }
             ]
         } ,
 
         //RED DE COOCURRENCIAS
         networkBlock: {
             title: "Red de coocurrencias",
-            description: "La red de coocurrencias muestra qué conceptos aparecen conjuntamente dentro de las mismas respuestas. Los nodos representan términos relevantes y las aristas indican que dichos términos fueron mencionados en una misma respuesta.",
-            badgeWords: 18,
-            badgeCooccurrences: 17,
-            footnote: "La red muestra las palabras y conceptos más relevantes del corpus y sus coocurrencias observadas. Se excluyeron conectores, palabras vacías y términos de muy baja relevancia.",
+            description: "La red de coocurrencias muestra qué palabras aparecen conjuntamente dentro de las mismas respuestas sobre las soluciones propuestas. Los nodos representan palabras y las aristas (líneas) indican su coocurrencia. El tamaño del nodo refleja la frecuencia de la palabra y el grosor de la línea la fuerza de la relación.",
+            badgeWords: 30,
+            badgeCooccurrences: 7,
+            footnote: "Se identificaron 7 pares de términos con al menos dos coocurrencias dentro de las 32 respuestas válidas. Se excluyeron conectores, palabras vacías y términos sin valor analítico. La pregunta 3 tiene muchas menos respuestas y el vocabulario es más disperso, por lo que la red es naturalmente mucho más pequeña",
             guideTitle: "¿Cómo leer esta red?",
-            guideText: "Los nodos más grandes representan conceptos con mayor presencia. Las líneas más gruesas indican relaciones más frecuentes. Los colores agrupan los conceptos según su temática.",
+            guideText: "Los nodos más grandes son las palabras más frecuentes. Las líneas más gruesas indican relaciones más fuertes, es decir, términos que aparecen conjuntamente en un mayor número de respuestas. Los colores agrupan las palabras según las temáticas identificadas.",
             groups: [
-                { color: "#3b5998", theme: "Gestión institucional y cumplimiento" },
-                { color: "#33bfa8", theme: "Seguridad, vigilancia y convivencia" },
-                { color: "#72c272", theme: "Servicios y apoyo al adulto mayor" },
-                { color: "#8e67b9", theme: "Inclusión y redes comunitarias" },
-                { color: "#fff1b3", theme: "Movilidad y accesibilidad" },
-                { color: "#ffa630", theme: "Apoyo económico y recursos" }
+                {
+                    color: "#3b5998",
+                    theme: "Espacio público, movilidad y ambiente"
+                },
+                {
+                    color: "#33bfa8",
+                    theme: "Seguridad y protección"
+                },
+                {
+                    color: "#72c272",
+                    theme: "Participación comunitaria, acompañamiento y redes sociales"
+                },
+                {
+                    color: "#8e67b9",
+                    theme: "Salud, cuidado y servicios de apoyo"
+                },
+                {
+                    color: "#fff1b3",
+                    theme: "Educación, sensibilización e información"
+                },
+                {
+                    color: "#ffa630",
+                    theme: "Economía, recursos y equidad"
+                },
+                {
+                    color: "#c06c84",
+                    theme: "Institucionalidad, control y políticas públicas"
+                },
+                {
+                    color: "#d6a4e4",
+                    theme: "Vivienda, centros y ciudad amigable con las personas mayores"
+                }
             ]
         },
         
@@ -241,77 +289,112 @@ const SITE_DATA1 = {
         map: [
             {
                 id: "map-1",
-                theme: "1. Gestión institucional, autoridad y cumplimiento",
-                color: "#9b51e0",
+                theme: "1. Institucionalidad, control y políticas públicas",
+                color: "#c06c84",
                 subthemes: [
-                    "Comunicación con autoridades",
-                    "Cumplimiento de la ley",
-                    "Seguimiento institucional",
-                    "Atención oportuna de problemas",
-                    "Articulación entre entidades",
-                    "Mayor compromiso de la administración"
+                    "Coordinación entre entidades",
+                    "Atención institucional oportuna",
+                    "Control y seguimiento del espacio público",
+                    "Comunicación con las autoridades",
+                    "Compromiso municipal",
+                    "Políticas públicas de protección",
+                    "Distribución de recursos",
+                    "Vigilancia policial",
+                    "Cumplimiento de normas y leyes"
                 ]
             },
             {
                 id: "map-2",
-                theme: "2. Servicios, cuidado y atención al adulto mayor",
-                color: "#2f80ed",
+                theme: "2. Participación comunitaria, acompañamiento y redes sociales",
+                color: "#72c272",
                 subthemes: [
-                    "Centros de atención cercanos",
-                    "Hogares para adultos mayores",
-                    "Atención en salud",
+                    "Alianzas comunitarias",
+                    "Solidaridad",
+                    "Acción comunal",
+                    "Participación en programas del barrio",
                     "Acompañamiento",
-                    "Espacios de acogida",
-                    "Difusión de beneficios y oferta"
+                    "Identificación de personas que viven solas",
+                    "Espacios de encuentro",
+                    "Actividades compartidas",
+                    "Acuerdos entre actores del territorio"
                 ]
             },
             {
                 id: "map-3",
-                theme: "3. Seguridad, vigilancia y convivencia",
-                color: "#27ae60",
+                theme: "3. Espacio público, movilidad y ambiente",
+                color: "#3b5998",
                 subthemes: [
-                    "Mayor vigilancia policial",
-                    "Rondas de la policía",
-                    "Cámaras de seguridad",
+                    "Control del espacio público",
+                    "Recuperación de zonas peatonales",
+                    "Rampas y accesibilidad",
+                    "Frecuencia semafórica",
                     "Control del ruido",
-                    "Normas de convivencia",
-                    "Control del tránsito"
+                    "Regulación de horarios",
+                    "Vigilancia del tránsito",
+                    "Mantenimiento de vías peatonales",
+                    "Vegetación adecuada"
                 ]
             },
             {
                 id: "map-4",
-                theme: "4. Movilidad, accesibilidad y espacio público",
-                color: "#f2994a",
+                theme: "4. Educación, sensibilización e información",
+                color: "#fff1b3",
                 subthemes: [
-                    "Rampas sin escalas",
-                    "Mejoras para peatones",
-                    "Tiempo de semáforos",
-                    "Control del espacio público",
-                    "Accesibilidad para personas con dificultades",
-                    "Reparación de infraestructura"
+                    "Educación para el cuidado",
+                    "Sensibilización sobre las personas mayores",
+                    "Conferencias",
+                    "Divulgación de la oferta",
+                    "Enseñanza",
+                    "Concientización sobre el ruido",
+                    "Concientización de jóvenes",
+                    "Información sobre programas"
                 ]
             },
             {
                 id: "map-5",
-                theme: "5. Inclusión, educación y redes comunitarias",
-                color: "#56ccf2",
+                theme: "5. Salud, cuidado y servicios de apoyo",
+                color: "#8e67b9",
                 subthemes: [
-                    "Educación y sensibilización",
-                    "Inclusión",
-                    "Participación comunitaria",
-                    "Solidaridad",
-                    "Actividades intergeneracionales",
-                    "Conferencias y concientización"
+                    "Atención en salud",
+                    "Atención presencial",
+                    "Atención oportuna",
+                    "Identificación de necesidades",
+                    "Sitios de acogida",
+                    "Hogares para personas mayores",
+                    "Centros de atención cercanos"
                 ]
             },
             {
                 id: "map-6",
-                theme: "6. Apoyo económico y distribución de recursos",
-                color: "#f2c94c",
+                theme: "6. Vivienda, centros y ciudad amigable con las personas mayores",
+                color: "#9b51e0",
                 subthemes: [
+                    "Sitios de acogida",
+                    "Hogares para adultos mayores",
+                    "Centros de atención cercanos",
+                    "Ciudad amigable con las personas mayores",
+                    "Acceso para personas con dificultades"
+                ]
+            },
+            {
+                id: "map-7",
+                theme: "7. Seguridad y protección",
+                color: "#33bfa8",
+                subthemes: [
+                    "Cámaras de vigilancia",
+                    "Mayor presencia policial",
+                    "Rondas policiales",
+                    "Normas de seguridad y tránsito"
+                ]
+            },
+            {
+                id: "map-8",
+                theme: "8. Economía, recursos y equidad",
+                color: "#ffa630",
+                subthemes: [
+                    "Distribución de recursos",
                     "Ayudas económicas",
-                    "Equidad en la asignación de recursos",
-                    "Mejor distribución presupuestal"
+                    "Equidad entre estratos"
                 ]
             }
         ],
@@ -321,73 +404,95 @@ const SITE_DATA1 = {
         quotes: {
             title: "Citas representativas por tema",
             subtitle: "Evidencias textuales seleccionadas de las respuestas de los participantes.",
-            footnote: "Las citas corresponden a respuestas textuales seleccionadas por su representatividad dentro del tema identificado durante la codificación cualitativa.",
+            footnote: "Las citas corresponden a respuestas textuales seleccionadas por su representatividad dentro de los temas identificados durante la codificación cualitativa.",
             items: [
                 {
                     id: 1,
-                    theme: "Gestión institucional, autoridad y cumplimiento",
+                    theme: "Institucionalidad, control y políticas públicas",
                     icon: "fas fa-landmark",
-                    colorClass: "quote-blue",
-                    frequency: "10 respuestas (37,0 %)",
+                    colorClass: "quote-purple",
+                    frequency: "13 respuestas (40,6 %)",
                     badgeText: "Tema más frecuente",
                     badgeIcon: "far fa-star",
-                    quoteText: "\"Que las personas encargadas de divulgar estos problemas si lo hagan a las autoridades correspondientes y se cumpla la ley\"",
-                    responseId: "Pregunta #3"
+                    quoteText: "\"Tienen que existir autoridades y deben existir políticas públicas que apunten a defender y proteger al adulto mayor, como ocurre en Europa.\"",
+                    responseId: "Respuesta #12"
                 },
                 {
                     id: 2,
-                    theme: "Servicios, cuidado y atención al adulto mayor",
-                    icon: "fas fa-heart",
-                    colorClass: "quote-purple",
-                    frequency: "8 respuestas (29,6 %)",
+                    theme: "Participación comunitaria, acompañamiento y redes sociales",
+                    icon: "fas fa-hands-helping",
+                    colorClass: "quote-green",
+                    frequency: "10 respuestas (31,3 %)",
                     badgeText: "Alta presencia",
                     badgeIcon: "fas fa-trending-up",
-                    quoteText: "\"Aumentar los centros de atención cercanos, hogares de adultos con mayor difusión para aprovechar los beneficios que tienen\"",
-                    responseId: "Pregunta #9"
+                    quoteText: "\"Más acompañamiento y más lugares donde puedan concentrarse con gente de su misma edad y compartir diferentes actividades\"",
+                    responseId: "Respuesta #20"
                 },
                 {
                     id: 3,
-                    theme: "Seguridad, vigilancia y convivencia",
-                    icon: "fas fa-shield-alt",
-                    colorClass: "quote-green",
-                    frequency: "7 respuestas (25,9 %)",
+                    theme: "Espacio público, movilidad y ambiente",
+                    icon: "fas fa-road",
+                    colorClass: "quote-blue",
+                    frequency: "10 respuestas (31,3 %)",
                     badgeText: "Alta presencia",
                     badgeIcon: "fas fa-trending-up",
-                    quoteText: "\"Normas y vigilancia de la policía y el tránsito\"",
-                    responseId: "Pregunta #5"
+                    quoteText: "\"Mejorar el tiempo de respuesta y de la frecuencia en la luz verde para los peatones.\"",
+                    responseId: "Respuesta #25"
                 },
                 {
                     id: 4,
-                    theme: "Movilidad, accesibilidad y espacio público",
-                    icon: "fas fa-walking",
-                    colorClass: "quote-orange",
-                    frequency: "5 respuestas (18,5 %)",
-                    badgeText: "Presencia media",
-                    badgeIcon: "fas fa-chart-bar",
-                    quoteText: "\"- Puentes sin escalas (solo rampas). - Más cámaras. - Más policía. - Enseñanza.\"",
-                    responseId: "Pregunta #22"
+                    theme: "Educación, sensibilización e información",
+                    icon: "fas fa-graduation-cap",
+                    colorClass: "quote-yellow",
+                    frequency: "9 respuestas (28,1 %)",
+                    badgeText: "Alta presencia",
+                    badgeIcon: "fas fa-trending-up",
+                    quoteText: "\"Educación y sensibilización para el cuidado del adulto mayor\\nProgramas de inclusión en la participación de programas del barrio\"",
+                    responseId: "Respuesta #1"
                 },
                 {
                     id: 5,
-                    theme: "Inclusión, educación y redes comunitarias",
-                    icon: "fas fa-users",
-                    colorClass: "quote-cyan",
-                    frequency: "5 respuestas (18,5 %)",
+                    theme: "Salud, cuidado y servicios de apoyo",
+                    icon: "fas fa-heart",
+                    colorClass: "quote-purple",
+                    frequency: "8 respuestas (25,0 %)",
                     badgeText: "Presencia media",
                     badgeIcon: "fas fa-chart-bar",
-                    quoteText: "\"Más acompañamiento y más lugares donde puedan concentrarse con gente de su misma edad y compartir diferentes actividades\"",
-                    responseId: "Pregunta #19"
+                    quoteText: "\"Alianzas comunitarias y solidaridad.\\n\\nMejorar atención en salud\\n\\nQue haya oportunidad de buscar y ver qué necesidades hay de las personas que viven solos para prestarles atención\"",
+                    responseId: "Respuesta #5"
                 },
                 {
                     id: 6,
-                    theme: "Apoyo económico y distribución de recursos",
-                    icon: "fas fa-hand-holding-usd",
-                    colorClass: "quote-yellow",
-                    frequency: "3 respuestas (11,1 %)",
+                    theme: "Vivienda, centros y ciudad amigable con las personas mayores",
+                    icon: "fas fa-home",
+                    colorClass: "quote-orange",
+                    frequency: "5 respuestas (15,6 %)",
+                    badgeText: "Presencia media",
+                    badgeIcon: "fas fa-chart-bar",
+                    quoteText: "\"Quisiera que se ocupen de eso de la ciudad senior para el adulto mayor con acceso a personas con dificultades.\"",
+                    responseId: "Respuesta #31"
+                },
+                {
+                    id: 7,
+                    theme: "Seguridad y protección",
+                    icon: "fas fa-shield-alt",
+                    colorClass: "quote-cyan",
+                    frequency: "4 respuestas (12,5 %)",
+                    badgeText: "Presencia media",
+                    badgeIcon: "fas fa-chart-bar",
+                    quoteText: "\"Mayor vigilancia, rondas más seguidas de la policía,\"",
+                    responseId: "Respuesta #17"
+                },
+                {
+                    id: 8,
+                    theme: "Economía, recursos y equidad",
+                    icon: "fas fa-coins",
+                    colorClass: "quote-orange",
+                    frequency: "3 respuestas (9,4 %)",
                     badgeText: "Presencia focalizada",
                     badgeIcon: "fas fa-chart-bar",
                     quoteText: "\"Que puedan contar con ayuda económica como otros estratos\"",
-                    responseId: "Pregunta #4"
+                    responseId: "Respuesta #30"
                 }
             ]
         },
@@ -402,66 +507,4 @@ const SITE_DATA1 = {
 
     }, // Cierre definitivo de thematicAnalysis,
 
-    // NUEVO: Contenido para los tres tipos de análisis
-    // Reemplaza únicamente la propiedad analysisTabs al final de tu objeto SITE_DATA:
-    /* analysisTabs: [
-        {
-            id: "tematico",
-            label: "Análisis Temático",
-            icon: "fas fa-tags",
-            active: true,
-            content: `
-                <div class="container-fluid py-4 bg-light rounded-3">
-                    <div id="thematic-visualizations-section" class="mb-5"></div>
-                    
-                    <div id="thematic-table-section" class="mb-5"></div>
-                    <div id="thematic-quotes-section" class="mb-5"></div>
-                    
-                    <!-- Sección de Análisis Léxico / Nube de palabras -->
-                    <div id="thematic-wordcloud-section" class="mb-5"></div>
-
-                    <!-- ¡AQUÍ ESTÁ LA CORRECCIÓN! Agregado el contenedor para la Red de Coocurrencias -->
-                    <div id="thematic-network-section" class="mb-4"></div>
-                    <div id="thematic-summary-section" class="mb-5"></div>
-                    <div id="thematic-summary-analytical-section" class="mb-5"></div>
-                    <div id="thematic-map-section" class="mb-5"></div>
-                </div>
-            `
-        },
-        {
-            id: "cualitativo",
-            label: "Análisis Cualitativo",
-            icon: "fas fa-comments",
-            active: false,
-            content: `
-                <div class="p-4">
-                    <h4 class="fw-bold mb-3 text-primary">Voces y Testimonios Directos</h4>
-                    <p class="text-muted">A continuación se presentan citas textuales y percepciones subjetivas recopiladas que ilustran el sentir de la comunidad:</p>
-                    <blockquote class="blockquote border-start border-primary border-4 ps-3 my-4 italic">
-                        <p class="fst-italic">"Necesitamos que los programas de salud no solo sean en los centros de salud, sino que vengan a los parques del barrio."</p>
-                        <footer class="blockquote-footer mt-1">Persona mayor, Sector Laureles</footer>
-                    </blockquote>
-                </div>
-            `
-        },
-        {
-            id: "mineria",
-            label: "Minería de Texto",
-            icon: "fas fa-brain",
-            active: false,
-            content: `
-                <div class="p-4">
-                    <h4 class="fw-bold mb-3 text-primary">Nube de Palabras y Frecuencias</h4>
-                    <p class="text-muted">Procesamiento de lenguaje natural (PLN) aplicado a las respuestas para identificar las palabras clave más repetidas.</p>
-                    <div class="d-flex flex-wrap gap-2 mt-3">
-                        <span class="badge bg-primary fs-5 p-2">Bienestar (84)</span>
-                        <span class="badge bg-secondary fs-6 p-2">Salud (74)</span>
-                        <span class="badge bg-info text-dark fs-6 p-2">Comunidad (50)</span>
-                        <span class="badge bg-dark fs-6 p-2">Espacios (42)</span>
-                        <span class="badge bg-warning text-dark fs-6 p-2">Cuidado (30)</span>
-                    </div>
-                </div>
-            `
-        }
-    ] */
 };
