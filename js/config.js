@@ -14,12 +14,28 @@ const SITE_DATA = {
         subtitle: "Resumen de la participación ciudadana en el proceso"
     },
 
-    "summaryMetrics": [
-                        {"value":"114","label":"Participantes","icon":"fas fa-users"},
-                        {"value":"65 años","label":"Edad mediana","icon":"fas fa-calendar-alt"},
-                        {"value":"28%","label":"Vive en Laureles","icon":"fas fa-map-marker-alt"},
-                        {"value":"97%","label":"Relación con la Comuna 11","icon":"fas fa-home"}
-                    ],
+    summaryMetrics: [
+        {
+        "value": "132",
+        "label": "Participantes",
+        "icon": "fas fa-users"
+        },
+        {
+        "value": "65 años",
+        "label": "Edad mediana",
+        "icon": "fas fa-calendar-alt"
+        },
+        {
+        "value": "15.9%",
+        "label": "Vive en el barrio Laureles",
+        "icon": "fas fa-map-marker-alt"
+        },
+        {
+        "value": "89.4%",
+        "label": "Relación con la Comuna 11",
+        "icon": "fas fa-home"
+        }
+    ],
 
     // Pestañas (Tabs) con su objetivo (target)
     generalTabs: [
@@ -31,237 +47,452 @@ const SITE_DATA = {
 
     // Datos del Tab "Perfil de participantes"
     "profileData": {
-    "ageDistribution": [
-      {
-        "label": "18-29",
-        "percentage": 1
-      },
-      {
-        "label": "30-59",
-        "percentage": 20
-      },
-      {
-        "label": "60+",
-        "percentage": 79
-      }
-    ],
+            "ageDistribution": [
+                {
+                    "label": "18-29",
+                    "percentage": 0.9
+                },
+                {
+                    "label": "30-39",
+                    "percentage": 0.9
+                },
+                {
+                    "label": "40-49",
+                    "percentage": 5.7
+                },
+                {
+                    "label": "50-59",
+                    "percentage": 13.2
+                },
+                {
+                    "label": "60-69",
+                    "percentage": 42.5
+                },
+                {
+                    "label": "70+",
+                    "percentage": 36.8
+                }
+            ],
 
-    "genderDistribution": {
-      "totalLabel": "100%",
-      "items": [
-        {
-          "label": "Mujer",
-          "percentage": 81,
-          "color": "#0056b3"
-        },
-        {
-          "label": "Hombre",
-          "percentage": 19,
-          "color": "#54a0ff"
-        },
-        {
-          "label": "Otro",
-          "percentage": 1,
-          "color": "#b0bfd2"
-        },
-        {
-          "label": "Prefiero no contestar",
-          "percentage": 0,
-          "color": "#fafbfc"
-        }
-      ]
-    },
+            "genderDistribution": {
+            "totalLabel": "100%",
+            "items": [
+                        {
+                        "label": "Mujer",
+                        "percentage": 72.7,
+                        "color": "#0056b3"
+                        },
+                        {
+                        "label": "Hombre",
+                        "percentage": 18.2,
+                        "color": "#54a0ff"
+                        },
+                        {
+                        "label": "Otro",
+                        "percentage": 0.8,
+                        "color": "#b0bfd2"
+                        },
+                        {
+                        "label": "Prefiero no contestar",
+                        "percentage": 8.3,
+                        "color": "#050505"
+                        }
+                    ]
+                },
 
     "occupationalStatus": [
-      {
-        "label": "Jubilado / Pensionado",
-        "percentage": 36
-      },
-      {
-        "label": "Profesional",
-        "percentage": 28
-      },
-      {
-        "label": "Ama/o de casa",
-        "percentage": 11
-      },
-      {
-        "label": "Independiente",
-        "percentage": 10
-      },
-      {
-        "label": "Otro",
-        "percentage": 10
-      },
-      {
-        "label": "Empleado",
-        "percentage": 1
-      },
-      {
-        "label": "Comerciante",
-        "percentage": 1
-      },
-      {
-        "label": "Sin información",
-        "percentage": 4
-      }
-    ]
-  },
+                    {
+                        "label": "Jubilado / Pensionado",
+                        "percentage": 34.8
+                    },
+                    {
+                        "label": "Profesional",
+                        "percentage": 22.0
+                    },
+                    {
+                        "label": "Ama/o de casa",
+                        "percentage": 9.1
+                    },
+                    {
+                        "label": "Sin información",
+                        "percentage": 9.1
+                    },
+                    {
+                        "label": "Independiente",
+                        "percentage": 6.1
+                    },
+                    {
+                        "label": "Cuidador/a",
+                        "percentage": 4.5
+                    },
+                    {
+                        "label": "Empleado",
+                        "percentage": 4.5
+                    },
+                    {
+                        "label": "No aplica",
+                        "percentage": 4.5
+                    },
+                    {
+                        "label": "Comerciante",
+                        "percentage": 2.3
+                    },
+                    {
+                        "label": "Otro",
+                        "percentage": 3.0
+                    }
+            ]
+        },
 
     // DATOS DEL TAB TERRITORIO
    "territoryData": {
             "livesInNeighborhood": {
-                "total": "85%",
-                "label": "Sí vive en la Comuna 11",
+                "total": "81.1%",
+                "label": "Sí vive en la comuna 11",
                 "items": [
-                {"label":"Sí","percentage":85,"color":"#0056b3"},
-                {"label":"No","percentage":13,"color":"#156efe"},
-                {"label":"No estoy seguro","percentage":0,"color":"#8bb4f8"},
-                {"label":"Sin información","percentage":2,"color":"#cbd2dd"}
+                    {
+                    "label": "Sí",
+                    "percentage": 81.1,
+                    "color": "#0056b3"
+                    },
+                    {
+                    "label": "No",
+                    "percentage": 11.4,
+                    "color": "#8bb4f8"
+                    },
+                    {
+                    "label": "No estoy seguro",
+                    "percentage": 0.0,
+                    "color": "#a8aaad"
+                    },
+                    {
+                    "label": "Sin información",
+                    "percentage": 7.6,
+                    "color": "#020202"
+                    }
                 ],
-                "base": "113 respuestas válidas"
+                "base": "132 participantes"
             },
 
             "residenceMunicipality": {
-                "base": "113 respuestas válidas",
-                "items": [
-                {"label":"Medellín","percentage":97},
-                {"label":"Otro / no identificable","percentage":1},
-                {"label":"Sin información","percentage":2}
+                "base": "132 participantes",
+      "items": [
+                    {
+                    "label": "Medellín",
+                    "percentage": 91.7
+                    },
+                    {
+                    "label": "Sin información",
+                    "percentage": 3.8
+                    }
                 ]
             },
 
             "residenceNeighborhoods": {
-                "base": "114 participantes; respuesta múltiple",
+                "base": "132 participantes. De las respuestas registradas, algunas corresponden a barrios diferentes a los 15 barrios oficiales de la Comuna 11 – Laureles-Estadio, entre ellos Aranjuez, Los Ángeles, Loma de los Bernal, La Floresta, Belén, La América, El Poblado, Santa Teresita, Santa Mónica, Manrique y Belén Fátima, entre otros.",
                 "items": [
-                {"label":"Laureles","percentage":28},
-                {"label":"Conquistadores","percentage":11},
-                {"label":"Florida Nueva","percentage":9},
-                {"label":"San Joaquín","percentage":8},
-                {"label":"Los Colores","percentage":5},
-                {"label":"Belén","percentage":5},
-                {"label":"Bolivariana","percentage":4},
-                {"label":"Lorena","percentage":4},
-                {"label":"Velódromo","percentage":4},
-                {"label":"Castellana","percentage":3},
-                {"label":"Las Acacias","percentage":3},
-                {"label":"Loma de los Bernal","percentage":3},
-                {"label":"Carlos E. Restrepo","percentage":2},
-                {"label":"Aranjuez","percentage":2},
-                {"label":"Los Ángeles","percentage":1},
-                {"label":"La Floresta","percentage":1},
-                {"label":"El Poblado","percentage":1},
-                {"label":"América","percentage":1},
-                {"label":"Naranjal","percentage":1},
-                {"label":"Suramericana","percentage":1},
-                {"label":"Santa Teresita","percentage":1},
-                {"label":"Santa Mónica","percentage":1},
-                {"label":"Manrique","percentage":1},
-                {"label":"Comuna 11, sin barrio especificado","percentage":1},
-                {"label":"Otro / no identificable","percentage":4},
-                {"label":"Sin información","percentage":3}
+                    {
+                    "label": "Laureles",
+                    "percentage": 15.9
+                    },
+                    {
+                    "label": "Los Conquistadores",
+                    "percentage": 9.8
+                    },
+                    {
+                    "label": "San Joaquín",
+                    "percentage": 6.8
+                    },
+                    {
+                    "label": "Florida Nueva",
+                    "percentage": 6.1
+                    },
+                    {
+                    "label": "Los Colores",
+                    "percentage": 4.5
+                    },
+                    {
+                    "label": "Estadio",
+                    "percentage": 3.8
+                    },
+                    {
+                    "label": "El Velódromo",
+                    "percentage": 3.8
+                    },
+                    {
+                    "label": "Bolivariana",
+                    "percentage": 2.3
+                    },
+                    {
+                    "label": "Carlos E. Restrepo",
+                    "percentage": 1.5
+                    },
+                    {
+                    "label": "Lorena",
+                    "percentage": 1.5
+                    },
+                    {
+                    "label": "Suramericana",
+                    "percentage": 1.5
+                    },
+                    {
+                    "label": "La Castellana",
+                    "percentage": 1.5
+                    },
+                    {
+                    "label": "Naranjal",
+                    "percentage": 0.8
+                    },
+                    {
+                    "label": "Las Acacias",
+                    "percentage": 0.8
+                    },
+                    {
+                    "label": "La Cuarta Brigada",
+                    "percentage": 0.0
+                    }
                 ]
             },
 
             "neighborhoodRelation": {
-                "base": "114 participantes",
+                "base": "132 participantes",
                 "items": [
-                {"label":"Vivo en la comuna","percentage":83,"icon":"fas fa-home"},
-                {"label":"Paso mucho tiempo","percentage":14,"icon":"far fa-clock"},
-                {"label":"Familiares / amigos","percentage":12,"icon":"fas fa-users"},
-                {"label":"Trabajo","percentage":9,"icon":"fas fa-briefcase"},
-                {"label":"Sin información","percentage":2,"icon":"fas fa-question-circle"}
+                    {
+                    "label": "Vivo en la comuna",
+                    "percentage": 75.8,
+                    "icon": "fas fa-home"
+                    },
+                    {
+                    "label": "Paso mucho tiempo",
+                    "percentage": 12.9,
+                    "icon": "far fa-clock"
+                    },
+                    {
+                    "label": "Familiares / amigos",
+                    "percentage": 10.6,
+                    "icon": "fas fa-users"
+                    },
+                    {
+                    "label": "Trabajo",
+                    "percentage": 8.3,
+                    "icon": "fas fa-briefcase"
+                    },
+                    {
+                    "label": "Sin relación",
+                    "percentage": 0.0,
+                    "icon": "fas fa-ban"
+                    },
+                    {
+                    "label": "Sin información",
+                    "percentage": 10.6,
+                    "icon": "fas fa-question-circle"
+                    }
                 ]
             }
-},
+    },
 
     // DATOS DEL TAB PARTICIPACIÓN
     participationData: {
         "howLearned": {
-            "base": "103 respuestas con canal registrado",
-            "items": [
-                {"label":"WhatsApp","percentage":64},
-                {"label":"Voz a voz","percentage":21},
-                {"label":"Otros medios","percentage":6},
-                {"label":"Facebook","percentage":2},
-                {"label":"Correo Electrónico","percentage":2},
-                {"label":"Carteleras Información","percentage":2},
-                {"label":"Instagram","percentage":1},
-                {"label":"Televisión","percentage":1},
-                {"label":"Sin información","percentage":1}
-            ]
+             "base": "122 participantes con respuesta",
+                "items": [
+                    {
+                    "label": "WhatsApp",
+                    "percentage": 55.7
+                    },
+                    {
+                    "label": "Voz a voz",
+                    "percentage": 24.6
+                    },
+                    {
+                    "label": "Sin información",
+                    "percentage": 8.2
+                    },
+                    {
+                    "label": "Otro",
+                    "percentage": 4.9
+                    },
+                    {
+                    "label": "Facebook",
+                    "percentage": 1.6
+                    },
+                    {
+                    "label": "Carteleras de información",
+                    "percentage": 1.6
+                    },
+                    {
+                    "label": "Correo Electrónico",
+                    "percentage": 1.6
+                    },
+                    {
+                    "label": "Instagram",
+                    "percentage": 0.8
+                    },
+                    {
+                    "label": "Televisión",
+                    "percentage": 0.8
+                    },
+                    {
+                    "label": "Radio",
+                    "percentage": 0.0
+                    }
+                ]
             },
         "wantToContinue": {
-            "base": "113 respuestas",
-            "totalLabel": "71%",
+            "base": "132 participantes",
+            "totalLabel": "65.2%",
             "label": "Sí",
             "items": [
-                {"label":"Sí","percentage":71,"color":"#0056b3"},
-                {"label":"No","percentage":26,"color":"#54a0ff"},
-                {"label":"Sin información","percentage":3,"color":"#cbd5e1"}
+                {
+                "label": "Sí",
+                "percentage": 65.2,
+                "color": "#0056b3"
+                },
+                {
+                "label": "No",
+                "percentage": 31.8,
+                "color": "#54a0ff"
+                },
+                {
+                "label": "Sin información",
+                "percentage": 3.0,
+                "color": "#cbd5e1"
+                }
             ]
             },
         "howLearnedByAgeGroup": [
-        {
-            "ageGroup": "18–29 años",
-            "base": "1 participante",
-            "items": [
-            {"label":"WhatsApp","participants":1,"percentage":100}
-            ]
-        },
-        {
-            "ageGroup": "30–59 años",
-            "base": "20 participantes",
-            "items": [
-            {"label":"WhatsApp","participants":13,"percentage":65},
-            {"label":"Facebook","participants":2,"percentage":10},
-            {"label":"Instagram","participants":1,"percentage":5},
-            {"label":"Carteleras de información","participants":1,"percentage":5},
-            {"label":"Sin información / vacío","participants":3,"percentage":15}
-            ]
-        },
-        {
-            "ageGroup": "60+ años",
-            "base": "78 participantes",
-            "items": [
-            {"label":"WhatsApp","participants":52,"percentage":67},
-            {"label":"Voz a voz","participants":9,"percentage":12},
-            {"label":"Otros medios","participants":6,"percentage":8},
-            {"label":"Correo Electrónico","participants":2,"percentage":3},
-            {"label":"Carteleras de información","participants":1,"percentage":1},
-            {"label":"Televisión","participants":1,"percentage":1},
-            {"label":"Sin información / vacío","participants":7,"percentage":9}
-            ]
-        }
+                {
+                "ageGroup": "18–29 años",
+                "base": "1 participante",
+                "items": [
+                {
+                    "label": "WhatsApp",
+                    "percentage": 100.0
+                }
+                ]
+            },
+            {
+                "ageGroup": "30–59 años",
+                "base": "21 participantes",
+                "items": [
+                {
+                    "label": "WhatsApp",
+                    "percentage": 66.7
+                },
+                {
+                    "label": "Facebook",
+                    "percentage": 9.5
+                },
+                {
+                    "label": "Instagram",
+                    "percentage": 4.8
+                },
+                {
+                    "label": "Carteleras de información",
+                    "percentage": 4.8
+                }
+                ]
+            },
+            {
+                "ageGroup": "60+ años",
+                "base": "83 participantes",
+                "items": [
+                {
+                    "label": "WhatsApp",
+                    "percentage": 62.7
+                },
+                {
+                    "label": "Voz a voz",
+                    "percentage": 16.9
+                },
+                {
+                    "label": "Otro",
+                    "percentage": 7.2
+                },
+                {
+                    "label": "Correo Electrónico",
+                    "percentage": 2.4
+                },
+                {
+                    "label": "Carteleras de información",
+                    "percentage": 1.2
+                },
+                {
+                    "label": "Televisión",
+                    "percentage": 1.2
+                }
+                ]
+            }
         ]
     },
 
     // DATOS DEL TAB ORGANIZACIÓN (NUEVO)
     organizationData: {
         "participacion": {
-        "base":"114 participantes",
-        "items":[
-            {"label":"Pertenece","percentage":24},
-            {"label":"No pertenece","percentage":43},
-            {"label":"No estoy seguro","percentage":4},
-            {"label":"Sin información","percentage":2}
+        "base": "89 participantes con respuesta",
+        "items": [
+            {
+            "label": "Pertenece",
+            "percentage": 31.5,
+            "activeIcons": 4,
+            "totalIcons": 10
+            },
+            {
+            "label": "No pertenece",
+            "percentage": 57.3,
+            "activeIcons": 6,
+            "totalIcons": 10
+            },
+            {
+            "label": "No estoy seguro",
+            "percentage": 9.0,
+            "activeIcons": 6,
+            "totalIcons": 10
+            },
+            {
+            "label": "Sin información",
+            "percentage": 2.2,
+            "activeIcons": 6,
+            "totalIcons": 10
+            }
         ],
-        "missingPercentage":27
+        "missingPercentage":30
         },
         "tipos": {
-        "base":"27 participantes que reportaron pertenencia",
-        "items":[
-            {"label":"Club de vida","percentage":41},
-            {"label":"Social o comunitaria","percentage":37},
-            {"label":"Religiosa","percentage":7},
-            {"label":"Recreativa o deportiva","percentage":7},
-            {"label":"Cultural","percentage":4},
-            {"label":"Educativa","percentage":4},
-            {"label":"Otra","percentage":0}
-        ]
+            "base": "30 participantes con tipo de organización reportado",
+            "items": [
+                {
+                "label": "Social o comunitaria",
+                "percentage": 36.7
+                },
+                {
+                "label": "Club de vida",
+                "percentage": 36.7
+                },
+                {
+                "label": "Religiosa",
+                "percentage": 6.7
+                },
+                {
+                "label": "Recreativa o deportiva",
+                "percentage": 6.7
+                },
+                {
+                "label": "Otra",
+                "percentage": 6.7
+                },
+                {
+                "label": "Cultural",
+                "percentage": 3.3
+                },
+                {
+                "label": "Educativa",
+                "percentage": 3.3
+                }
+            ]
         },
         organizacionesVinculadas: {
-            base: "114 participantes",
+            base: "134 participantes",
             items: [
                 {
                     "name": "Cenfol / Cenfol Laureles",
